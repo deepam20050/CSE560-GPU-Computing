@@ -81,10 +81,12 @@ int main() {
       A[i][j] = static_cast<float>((i + 1) * (j + 1));
     }
   }
-  float *d_A, *d_A_T, *d_A_T_A;
+  float *d_A, *d_A_T, *d_s_A_T, *d_A_T_A, *d_s_A_T_A;
   cudaMalloc((void **)&d_A, ROWS * COLS * sizeof(float));
   cudaMalloc((void **)&d_A_T, ROWS * COLS * sizeof(float));
+  cudaMalloc((void **)&d_s_A_T, ROWS * COLS * sizeof(float));
   cudaMalloc((void **)&d_A_T_A, COLS * COLS * sizeof(float));
+  cudaMalloc((void **)&d_s_A_T_A, COLS * COLS * sizeof(float));
   cudaMemcpy(d_A, A, ROWS * COLS * sizeof(float), cudaMemcpyHostToDevice);
   // global memory code
   dim3 blockGlobalDim(THREADS, THREADS);
@@ -111,30 +113,33 @@ int main() {
   cudaEventSynchronize(gpu_stop);
   cudaEventElapsedTime(&gpu_elapsed, gpu_start, gpu_stop);
   printf("[GPU] Global Memory A_T * A Time measured: %.9lf milliseconds.\n", gpu_elapsed);
-  cudaMemcpy(A_T_A, d_A_T_A, ROWS * COLS * sizeof(float), cudaMemcpyDeviceToHost);
+  cudaMemcpy(A_T_A, d_A_T_A, COLS * COLS * sizeof(float), cudaMemcpyDeviceToHost);
   // shared memory code
   dim3 sharedGridDim((ROWS + THREADS - 1) / THREADS, (COLS + THREADS - 1) / THREADS);
   cudaEventCreate(&gpu_start);
   cudaEventCreate(&gpu_stop);
   cudaEventRecord(gpu_start);
-  shared_transpose<<<sharedGridDim, blockGlobalDim>>>(d_A, d_A_T, ROWS, COLS);
+  shared_transpose<<<sharedGridDim, blockGlobalDim>>>(d_A, d_s_A_T, ROWS, COLS);
   cudaDeviceSynchronize();
   cudaEventRecord(gpu_stop); 
   cudaEventSynchronize(gpu_stop);
   cudaEventElapsedTime(&gpu_elapsed, gpu_start, gpu_stop);
   printf("[GPU] Shared Memory Transpose Time measured: %.9lf milliseconds.\n", gpu_elapsed);
+  cudaMemcpy(A_T, d_s_A_T, ROWS * COLS * sizeof(float), cudaMemcpyDeviceToHost);
   cudaEventCreate(&gpu_start);
   cudaEventCreate(&gpu_stop);
   cudaEventRecord(gpu_start);
-  shared_matmul<<<sharedGridDim, blockGlobalDim>>>(d_A_T, d_A, d_A_T_A, COLS);
+  shared_matmul<<<sharedGridDim, blockGlobalDim>>>(d_s_A_T, d_A, d_s_A_T_A, COLS);
   cudaDeviceSynchronize();
   cudaEventRecord(gpu_stop); 
   cudaEventSynchronize(gpu_stop);
   cudaEventElapsedTime(&gpu_elapsed, gpu_start, gpu_stop);
   printf("[GPU] Shared Memory A_T * A Time measured: %.9lf milliseconds.\n", gpu_elapsed);
-  cudaMemcpy(A_T_A, d_A_T_A, ROWS * COLS * sizeof(float), cudaMemcpyDeviceToHost);
+  cudaMemcpy(A_T_A, d_s_A_T_A, COLS * COLS * sizeof(float), cudaMemcpyDeviceToHost);
   cudaFree(d_A);
   cudaFree(d_A_T);
+  cudaFree(d_s_A_T);
   cudaFree(d_A_T_A);
+  cudaFree(d_s_A_T_A);
   return 0;
 }
