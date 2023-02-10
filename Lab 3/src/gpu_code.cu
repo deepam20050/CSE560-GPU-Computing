@@ -8,7 +8,7 @@
 
 const int ROWS = 1024;
 const int COLS = 512;
-const int THREADS = 32;
+const int THREADS = 16;
 
 float A[ROWS][COLS], A_T[COLS][ROWS], A_T_A[COLS][COLS];
 
@@ -55,6 +55,7 @@ __global__ void shared_transpose (float *d_A, float *d_A_T, int rows, int cols) 
   }
 }
 
+// Ref: Lecture 6, 04CUDA_Memories.pdf, Slides 41-42
 __global__ void shared_matmul (float *a, float *b, float *ab, int width) {
   int tx = threadIdx.x, ty = threadIdx.y;
   int bx = blockIdx.x, by = blockIdx.y;
@@ -77,7 +78,7 @@ __global__ void shared_matmul (float *a, float *b, float *ab, int width) {
 int main() {
   for (int i = 0; i < ROWS; ++i) {
     for (int j = 0; j < COLS; ++j) {
-      A[i][j] = (i + 1) * (j + 1);
+      A[i][j] = static_cast<float>((i + 1) * (j + 1));
     }
   }
   float *d_A, *d_A_T, *d_A_T_A;
@@ -125,7 +126,7 @@ int main() {
   cudaEventCreate(&gpu_start);
   cudaEventCreate(&gpu_stop);
   cudaEventRecord(gpu_start);
-  shared_matmul<<<sharedGridDim, blockGlobalDim>>>(d_A_T, d_A, d_A_T_A, ROWS);
+  shared_matmul<<<sharedGridDim, blockGlobalDim>>>(d_A_T, d_A, d_A_T_A, COLS);
   cudaDeviceSynchronize();
   cudaEventRecord(gpu_stop); 
   cudaEventSynchronize(gpu_stop);

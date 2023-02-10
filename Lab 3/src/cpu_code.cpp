@@ -34,7 +34,7 @@ void matrix_mult () {
 int main() {
   for (int i = 0; i < ROWS; ++i) {
     for (int j = 0; j < COLS; ++j) {
-      A[i][j] = (i + 1) * (j + 1);
+      A[i][j] = static_cast<float>((i + 1) * (j + 1));
     }
   }
   timespec begin, end;
