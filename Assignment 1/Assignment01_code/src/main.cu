@@ -12,6 +12,12 @@ This notice constitutes an agreement between you and the author of the code, and
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 
 /*
+ * Deepam Sarmah
+ * 2020050
+ * deepam20050@iiitd.ac.in
+ */
+
+/*
  References:
  [1] http://stackoverflow.com/questions/23711681/generating-custom-color-palette-for-julia-set
  [2] http://www.cs.rit.edu/~ncs/color/t_convert.html
@@ -36,7 +42,7 @@ const int N = 1024;
 const float SQRT_2 = 1.4142;
 const int MAX_ITER = 512;
 
-void HSVtoRGB( float *r, float *g, float *b, float h, float s, float v );
+__host__ __device__ void HSVtoRGB( float *r, float *g, float *b, float h, float s, float v );
 void saveImage(int width, int height, unsigned char * bitmap, complex<float> seed, int who);
 void compute_julia_CPU(complex<float> c, unsigned char * image);
 void compute_julia_GPU(complex<float> c, unsigned char * image);
@@ -45,7 +51,7 @@ bool compare_CPU_GPU(unsigned char *image_CPU, unsigned char *image_GPU);
 __global__ void compute_julia_kernel(unsigned char *image, thrust::complex<float> c) {
 	int x = blockDim.x * blockIdx.x + threadIdx.x;
 	int y = blockDim.y * blockIdx.y + threadIdx.y;
-	int index = y * N + x;
+	const int index = y * N + x;
 	if (x < N && y < N) {
 		thrust::complex<float> z_old(0.0f, 0.0f);
 		thrust::complex<float> z_new(4.0f * x / N - 2.0f, 4.0f * y / N - 2.0f);
@@ -157,20 +163,17 @@ void compute_julia_CPU(complex<float> c, unsigned char * image)
 		}
 }
 
-void compute_julia_GPU(complex<float> c, unsigned char * image)
-{
-    int size = N * N * 3;
-    unsigned char *device_image;
-    cudaMalloc((void **)&device_image, size);
-
-    dim3 block(16, 16);
-    dim3 grid(N / block.x, N / block.y);
-		thrust::complex <float> c_thrust(c.real(), c.imag()); 
-    compute_julia_kernel<<<grid, block>>>(device_image, c_thrust);
-		cudaDeviceSynchronize();
-    cudaMemcpy(image, device_image, size, cudaMemcpyDeviceToHost);
-
-    cudaFree(device_image);
+void compute_julia_GPU(complex<float> c, unsigned char * image) {
+	int size = N * N * 3;
+	unsigned char *device_image;
+	cudaMalloc((void **)&device_image, size);
+	dim3 block(32, 32);
+	dim3 grid(N / block.x, N / block.y);
+	thrust::complex <float> c_thrust(c.real(), c.imag()); 
+	compute_julia_kernel<<<grid, block>>>(device_image, c_thrust);
+	cudaDeviceSynchronize();
+	cudaMemcpy(image, device_image, size, cudaMemcpyDeviceToHost);
+	cudaFree(device_image);
 }
 
 //Returns true if GPU results match CPU results, else returns false
@@ -181,23 +184,18 @@ bool compare_CPU_GPU(unsigned char *image_CPU, unsigned char *image_GPU) {
 		mean_cpu += image_CPU[i];
 	}
 	mean_cpu /= nelem;
-	float mean_gpu = 0.0f;
-	for (int i = 0; i < nelem; ++i) {
-		mean_gpu += image_GPU[i];
-	}
-	mean_gpu /= nelem;
 	float sst = 0.0f, sse = 0.0f;
 	for (int i = 0; i < nelem; ++i) {
 		sst += (image_CPU[i] - mean_cpu) * (image_CPU[i] - mean_cpu);
-		sse += (image_GPU[i] - mean_gpu) * (image_GPU[i] - mean_gpu);
+		sse += (image_GPU[i] - mean_cpu) * (image_GPU[i] - mean_cpu);
 	}
-	return (sse / sst) >= 0.9f;
+	return (sse / sst) >= 0.99f;
 }
 
 void saveImage(int width, int height, unsigned char * bitmap, complex<float> seed, int who)
 {
 	char imageName[256];
-	sprintf(imageName, "Julia %.3f + i%.3f.png %d N = %d", seed.real(), seed.imag(), who, N);
+	sprintf(imageName, "%d %d Julia %.3f + i%.3f.png", who, N, seed.real(), seed.imag());
 	stbi_write_png(imageName, width, height, 3, bitmap, width*3);
 	fprintf(stderr, "Image saved as: %s\n", imageName);
 }

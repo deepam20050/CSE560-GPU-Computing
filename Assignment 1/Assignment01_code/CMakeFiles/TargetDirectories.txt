@@ -1,3 +1,0 @@
-/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 1/Assignment01_code/CMakeFiles/Assignment01.dir
-/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 1/Assignment01_code/CMakeFiles/edit_cache.dir
-/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 1/Assignment01_code/CMakeFiles/rebuild_cache.dir
