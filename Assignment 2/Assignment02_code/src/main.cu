@@ -118,6 +118,8 @@ int main(int argc, char* argv[]){
 	cudaMemcpy(image_in_gpu, image_in, size * sizeof(unsigned char), cudaMemcpyHostToDevice);
 	cudaMemcpy(imageKernel_gpu, imageKernel, kernelHeight * kernelWidth * sizeof(float), cudaMemcpyHostToDevice);
 
+	// --------------------------------------------------------
+
 	// creating blocks and grids
 	dim3 block(16, 16);
 	dim3 grid((imageHeight + block.x - 1) / block.x, (imageWidth + block.y - 1) / block.y);
@@ -136,6 +138,9 @@ int main(int argc, char* argv[]){
 	gpu1_png += "-GPU1.png";
 	stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, imageChannels, image_gpu1, 0);
 
+	// allocate imageKernel in constant memory
+	__constant__ float imageKernel_c[kernelHeight * kernelWidth];
+	cudaMemcpyToSymbol(imageKernel_c, imageKernel, kernelHeight * kernelWidth * sizeof(float));
 
 	// launching GPU2 kernel
 	// TODO : Writing GPU2 + Timing GPU2 Kernel
