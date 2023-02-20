@@ -72778,7 +72778,7 @@ sum += ((inputImageData[(((dataSizeX * yIndex) + xIndex) * channels) + k]) * (ke
 # 51
 } 
 # 53
-void gpu1(const unsigned char *InputImageData, const float *kernel, unsigned char *outputImageData, int imageWidth, int imageHeight, int channels) ;
+void gpu1(const unsigned char *InputImageData, const float *kernel, unsigned char *outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) ;
 #if 0
 # 53
 { 
@@ -72787,29 +72787,29 @@ int i = ((__device_builtin_variable_blockIdx.x) * (__device_builtin_variable_blo
 # 55
 int j = ((__device_builtin_variable_blockIdx.y) * (__device_builtin_variable_blockDim.y)) + (__device_builtin_variable_threadIdx.y); 
 # 56
-if ((i < imageHeight) && (j < imageWidth)) { 
+if ((i < dataSizeY) && (j < dataSizeX)) { 
 # 57
-int kCenterX = (3 / 2), kCenterY = (3 / 2); 
+int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2; 
 # 58
 for (int k = 0; k < channels; ++k) { 
 # 59
 float sum = (0.0F); 
 # 60
-for (int m = 0; m < 3; ++m) { 
+for (int m = 0; m < kernelSizeY; ++m) { 
 # 61
-int mm = (3 - 1) - m; 
+int mm = (kernelSizeY - 1) - m; 
 # 62
-for (int n = 0; n < 3; ++n) { 
+for (int n = 0; n < kernelSizeX; ++n) { 
 # 63
-int nn = (3 - 1) - n; 
+int nn = (kernelSizeX - 1) - n; 
 # 64
 int yIndex = (i + m) - kCenterY; 
 # 65
 int xIndex = (j + n) - kCenterX; 
 # 66
-if ((yIndex >= 0) && (yIndex < imageHeight) && (xIndex >= 0) && (xIndex < imageWidth)) { 
+if ((yIndex >= 0) && (yIndex < dataSizeY) && (xIndex >= 0) && (xIndex < dataSizeX)) { 
 # 67
-sum += ((InputImageData[(((yIndex * imageWidth) + xIndex) * channels) + k]) * (kernel[(3 * mm) + nn])); 
+sum += ((InputImageData[(((yIndex * dataSizeX) + xIndex) * channels) + k]) * (kernel[(kernelSizeX * mm) + nn])); 
 # 68
 }  
 # 69
@@ -72817,7 +72817,7 @@ sum += ((InputImageData[(((yIndex * imageWidth) + xIndex) * channels) + k]) * (k
 # 70
 }  
 # 71
-atomicAdd((float *)(&(outputImageData[(((i * imageWidth) + j) * channels) + k])), sum); 
+(outputImageData[(((i * dataSizeX) + j) * channels) + k]) = sum; 
 # 72
 }  
 # 73
@@ -72835,22 +72835,26 @@ if (argc < 3) {
 return 0; 
 # 80
 }  
-# 83
+# 82
 int imageWidth, imageHeight, bpp; 
-# 84
+# 83
 const unsigned char *image_in = stbi_load(argv[1], &imageWidth, &imageHeight, &bpp, 1); 
-# 85
+# 84
 if ((bpp != 1) || (1 != 1)) { 
-# 86
+# 85
 (cout << ("Input image must be 8 bits per pixel, and sigle channel (grayscale).\n")); 
-# 87
+# 86
 return 0; 
-# 88
+# 87
 }  
-# 89
+# 88
 (((((((((cout << ("Image size: "))) << imageHeight)) << (" x "))) << imageWidth)) << (std::endl)); 
-# 92
+# 91
 unsigned char *image_out = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
+# 92
+unsigned char *image_gpu1 = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
+# 93
+unsigned char *image_gpu2 = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
 # 96
 float imageKernel[3 * 3]; 
 # 97
@@ -72866,48 +72870,62 @@ stbi_write_png(argv[2], imageWidth, imageHeight, 1, image_out, 0);
 # 111
 int size = imageWidth * imageHeight; 
 # 112
-unsigned char *device_image_gpu1; 
+unsigned char *device_image_gpu1, *device_image_gpu2, *image_in_gpu; 
 # 113
-unsigned char *image_gpu1 = new unsigned char [size]; 
+float *imageKernel_gpu; 
 # 114
-unsigned char *image_gpu2 = new unsigned char [size]; 
-# 115
 cudaMalloc((void **)(&device_image_gpu1), size * sizeof(unsigned char)); 
+# 115
+cudaMalloc((void **)(&device_image_gpu2), size * sizeof(unsigned char)); 
 # 116
-dim3 block(16, 16); 
+cudaMalloc((void **)(&image_in_gpu), size * sizeof(unsigned char)); 
 # 117
-dim3 grid(((imageHeight + (block.x)) - (1)) / (block.x), ((imageWidth + (block.y)) - (1)) / (block.y)); 
-# 121
-(__cudaPushCallConfiguration(grid, block)) ? (void)0 : gpu1(image_in, imageKernel, device_image_gpu1, 3, 3, 1); 
+cudaMalloc((void **)(&imageKernel_gpu), (3 * 3) * sizeof(float)); 
+# 118
+cudaMemcpy(image_in_gpu, image_in, size * sizeof(unsigned char), cudaMemcpyHostToDevice); 
+# 119
+cudaMemcpy(imageKernel_gpu, imageKernel, (3 * 3) * sizeof(float), cudaMemcpyHostToDevice); 
+# 122
+dim3 block(16, 16); 
 # 123
-cudaDeviceSynchronize(); 
-# 125
-cudaMemcpy(image_gpu1, device_image_gpu1, size, cudaMemcpyDeviceToHost); 
-# 126
-std::string gpu1_png(argv[2]); 
+dim3 grid(((imageHeight + (block.x)) - (1)) / (block.x), ((imageWidth + (block.y)) - (1)) / (block.y)); 
 # 127
-gpu1_png.pop_back(); 
+(__cudaPushCallConfiguration(grid, block)) ? (void)0 : gpu1(image_in_gpu, imageKernel_gpu, device_image_gpu1, 3, 3, imageWidth, imageHeight, 1); 
 # 128
-gpu1_png.pop_back(); 
-# 129
-gpu1_png.pop_back(); 
+cudaDeviceSynchronize(); 
 # 130
-gpu1_png.pop_back(); 
+cudaMemcpy(image_gpu1, device_image_gpu1, size * sizeof(unsigned char), cudaMemcpyDeviceToHost); 
 # 131
-(gpu1_png += ("-GPU1.png")); 
+std::string gpu1_png(argv[2]); 
 # 132
+gpu1_png.pop_back(); 
+# 133
+gpu1_png.pop_back(); 
+# 134
+gpu1_png.pop_back(); 
+# 135
+gpu1_png.pop_back(); 
+# 136
+(gpu1_png += ("-GPU1.png")); 
+# 137
 stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, 1, image_gpu1, 0); 
-# 139
-free(image_out); 
-# 140
-delete [] image_gpu1; 
-# 141
-delete [] image_gpu2; 
-# 142
-cudaFree(device_image_gpu1); 
-# 143
-return 0; 
 # 144
+free(image_out); 
+# 145
+free(image_gpu1); 
+# 146
+free(image_gpu2); 
+# 147
+cudaFree(device_image_gpu1); 
+# 148
+cudaFree(device_image_gpu2); 
+# 149
+cudaFree(image_in_gpu); 
+# 150
+cudaFree(imageKernel_gpu); 
+# 151
+return 0; 
+# 152
 } 
 
 # 1 "main.cudafe1.stub.c"

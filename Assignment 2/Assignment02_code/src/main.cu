@@ -50,25 +50,25 @@ void sequentialConvolution(const unsigned char*inputImageData, const float *kern
 	}
 }
 
-__global__ void gpu1 (const unsigned char * InputImageData, const float * kernel, unsigned char* outputImageData, int imageWidth, int imageHeight, int channels) {
+__global__ void gpu1 (const unsigned char * InputImageData, const float * kernel, unsigned char* outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) {
 	int i = blockIdx.x * blockDim.x + threadIdx.x;
 	int j = blockIdx.y * blockDim.y + threadIdx.y;
-	if (i < imageHeight && j < imageWidth) {
-		int kCenterX = kernelWidth / 2, kCenterY = kernelHeight / 2;
+	if (i < dataSizeY && j < dataSizeX) {
+		int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2;
 		for (int k = 0; k < channels; ++k) {
 			float sum = 0.0f;
-			for (int m = 0; m < kernelHeight; ++m) {
-				int mm = kernelHeight - 1 - m;
-				for (int n = 0; n < kernelWidth; ++n) {
-					int nn = kernelWidth - 1 - n;
+			for (int m = 0; m < kernelSizeY; ++m) {
+				int mm = kernelSizeY - 1 - m;
+				for (int n = 0; n < kernelSizeX; ++n) {
+					int nn = kernelSizeX - 1 - n;
 					int yIndex = i + m - kCenterY;
 					int xIndex = j + n - kCenterX;
-					if(yIndex >= 0 && yIndex < imageHeight && xIndex >= 0 && xIndex < imageWidth){
-						sum += InputImageData[(yIndex * imageWidth + xIndex) * channels + k] * kernel[kernelWidth * mm + nn];
+					if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX){
+						sum += InputImageData[(yIndex * dataSizeX + xIndex) * channels + k] * kernel[kernelSizeX * mm + nn];
 					}
 				}
 			}
-			outputImageData[(i * imageWidth + j) * channels + k] = sum;
+			outputImageData[(i * dataSizeX + j) * channels + k] = sum;
 		}
 	}
 }
@@ -78,7 +78,6 @@ int main(int argc, char* argv[]){
 		cout<<"Usage: "<<argv[0]<<" <image_in> <image_out>\n";
 		return 0;
 	}
-
 	// Read input image on host
 	int imageWidth, imageHeight, bpp;
 	const unsigned char* image_in = stbi_load( argv[1], &imageWidth, &imageHeight, &bpp, imageChannels );
@@ -87,10 +86,11 @@ int main(int argc, char* argv[]){
 		return 0;
 	}
 	cout << "Image size: " << imageHeight << " x " << imageWidth << std::endl; 
-
+	
 	// Allocate output image memory on host
 	unsigned char *image_out = (unsigned char*) malloc(imageWidth*imageHeight*sizeof(unsigned char));
-
+	unsigned char *image_gpu1 = (unsigned char*) malloc(imageWidth*imageHeight*sizeof(unsigned char));
+	unsigned char *image_gpu2 = (unsigned char*) malloc(imageWidth*imageHeight*sizeof(unsigned char));
 
 	// Setup image convolution kernel on host
 	float imageKernel[kernelHeight*kernelWidth];
@@ -105,24 +105,29 @@ int main(int argc, char* argv[]){
 	// Write convolved image to disk
 	stbi_write_png(argv[2], imageWidth, imageHeight, imageChannels, image_out, 0);
 
-
 	// Add cuda code here
-	// creating blocks and grids + allocating memory
+	
+	// allocate memory on device
 	int size = imageWidth * imageHeight;
-	unsigned char *device_image_gpu1;
-	unsigned char *image_gpu1 = new unsigned char[size];
-	unsigned char *image_gpu2 = new unsigned char[size];
+	unsigned char *device_image_gpu1, *device_image_gpu2, *image_in_gpu;
+	float *imageKernel_gpu;
 	cudaMalloc((void **)&device_image_gpu1, size * sizeof(unsigned char));
+	cudaMalloc((void **)&device_image_gpu2, size * sizeof(unsigned char));
+	cudaMalloc((void **)&image_in_gpu, size * sizeof(unsigned char));
+	cudaMalloc((void **)&imageKernel_gpu, kernelHeight * kernelWidth * sizeof(float));
+	cudaMemcpy(image_in_gpu, image_in, size * sizeof(unsigned char), cudaMemcpyHostToDevice);
+	cudaMemcpy(imageKernel_gpu, imageKernel, kernelHeight * kernelWidth * sizeof(float), cudaMemcpyHostToDevice);
+
+	// creating blocks and grids
 	dim3 block(16, 16);
 	dim3 grid((imageHeight + block.x - 1) / block.x, (imageWidth + block.y - 1) / block.y);
-	
+
 	// launching GPU1 kernel
 	// TODO : Timing GPU1 Kernel
-	gpu1<<<grid, block>>>(image_in, imageKernel, device_image_gpu1, kernelWidth, 
-												kernelHeight, imageChannels);
+	gpu1<<<grid, block>>>(image_in_gpu, imageKernel_gpu, device_image_gpu1, kernelWidth, kernelHeight, imageWidth, imageHeight, imageChannels);
 	cudaDeviceSynchronize();
 
-	cudaMemcpy(image_gpu1, device_image_gpu1, size, cudaMemcpyDeviceToHost);
+	cudaMemcpy(image_gpu1, device_image_gpu1, size * sizeof(unsigned char), cudaMemcpyDeviceToHost);
 	string gpu1_png(argv[2]);
 	gpu1_png.pop_back();
 	gpu1_png.pop_back();
@@ -137,8 +142,11 @@ int main(int argc, char* argv[]){
 
 	//Deallocate memory
 	free(image_out);
-	delete[] image_gpu1;
-	delete[] image_gpu2;
+	free(image_gpu1);
+	free(image_gpu2);
 	cudaFree(device_image_gpu1);
+	cudaFree(device_image_gpu2);
+	cudaFree(image_in_gpu);
+	cudaFree(imageKernel_gpu);
 	return 0;
 }

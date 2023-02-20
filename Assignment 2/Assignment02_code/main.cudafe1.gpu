@@ -1134,10 +1134,6 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13const_pointerE _M_current
 ___device__(extern  __no_sc__) __attribute__((__externally_visible__)) __attribute__((__nothrow__)) __attribute__((visibility("default"))) void _ZdlPvm(void *, _ZSt6size_t);
 # 281 "/opt/cuda/include/crt/common_functions.h"
 ___device__(extern  __no_sc__) __attribute__((__externally_visible__)) __attribute__((__nothrow__)) __attribute__((visibility("default"))) void _ZdlPvmSt11align_val_t(void *, _ZSt6size_t, unsigned long);
-# 268 "/opt/cuda/include/crt/common_functions.h"
-___device__(extern  __no_sc__) __attribute__((__externally_visible__)) __attribute__((visibility("default"))) void *_Znam(_ZSt6size_t);
-# 270 "/opt/cuda/include/crt/common_functions.h"
-___device__(extern  __no_sc__) __attribute__((__externally_visible__)) __attribute__((__nothrow__)) __attribute__((visibility("default"))) void _ZdaPv(void *);
 # 70 "/opt/cuda/include/cuda_device_runtime_api.h"
 ___device__(static  __no_sc__) __inline__ enum cudaError cudaMalloc(void **, size_t);
 # 139 "/opt/cuda/include/cuda_device_runtime_api.h"
@@ -1348,16 +1344,10 @@ ___device__(extern  __no_sc__) __attribute__((__nothrow__)) __attribute__((__nor
 #endif
 #if !defined(__CUDABE__)
 #endif
-#if !defined(__CUDABE__)
-# 79 "/opt/cuda/include/sm_20_atomic_functions.h"
- __device_builtin__ ___device__(extern  __no_sc__) float __fAtomicAdd(float *, float);
-#endif
-# 75 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-___device__(static  __no_sc__) __inline__ float _ZN37_INTERNAL_f6038529_7_main_cu_1b34e0029atomicAddEPff(float *, float);
 # 3309 "/opt/cuda/include/crt/device_functions.h"
 ___device__(extern  __no_sc__) unsigned __cudaPushCallConfiguration(struct dim3, struct dim3, size_t, struct CUstream_st *);
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__global__ __var_used__ extern void _Z4gpu1PKhPKfPhiii(const unsigned char *, const float *, unsigned char *, int, int, int);
+__global__ __var_used__ extern void _Z4gpu1PKhPKfPhiiiii(const unsigned char *, const float *, unsigned char *, int, int, int, int, int);
 # 423 "/opt/cuda/include/vector_types.h"
 ___device__(static  __no_sc__) __inline__ void _ZN4dim3C1Ejjj(struct dim3 *const, unsigned, unsigned, unsigned);
 ___device__(static  __no_sc__) __inline__ void _ZN4dim3C2Ejjj(struct dim3 *const, unsigned, unsigned, unsigned);
@@ -1572,23 +1562,8 @@ return cudaErrorUnknown;
 #endif
 #if !defined(__CUDABE__)
 #endif
-#if !defined(__CUDABE__)
-#endif
-# 75 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-___device__(static  __no_sc__) __inline__ float _ZN37_INTERNAL_f6038529_7_main_cu_1b34e0029atomicAddEPff(
-# 75 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-float *address, 
-# 75 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-float val){
-# 76 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-{  float *__T23;
- float __T24;
-# 77 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-return ((__T23 = address) , (void)(__T24 = val)) , (__fAtomicAdd(__T23, __T24));
-# 78 "/opt/cuda/include/sm_20_atomic_functions.hpp"
-}}
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__global__ __var_used__ void _Z4gpu1PKhPKfPhiii(
+__global__ __var_used__ void _Z4gpu1PKhPKfPhiiiii(
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 const unsigned char *InputImageData, 
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1596,9 +1571,13 @@ const float *kernel,
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 unsigned char *outputImageData, 
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-int imageWidth, 
+int kernelSizeX, 
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-int imageHeight, 
+int kernelSizeY, 
+# 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
+int dataSizeX, 
+# 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
+int dataSizeY, 
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 int channels){
 # 53 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1612,17 +1591,17 @@ __cuda_local_var_67829_6_non_const_i = ((int)(((blockIdx.x) * (blockDim.x)) + (t
 # 55 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 __cuda_local_var_67830_6_non_const_j = ((int)(((blockIdx.y) * (blockDim.y)) + (threadIdx.y)));
 # 56 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-if ((__cuda_local_var_67829_6_non_const_i < imageHeight) && (__cuda_local_var_67830_6_non_const_j < imageWidth))
+if ((__cuda_local_var_67829_6_non_const_i < dataSizeY) && (__cuda_local_var_67830_6_non_const_j < dataSizeX))
 # 56 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 {
 # 57 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
  int __cuda_local_var_67832_7_non_const_kCenterX;
 # 57 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
- int __cuda_local_var_67832_25_non_const_kCenterY;
+ int __cuda_local_var_67832_35_non_const_kCenterY;
 # 57 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__cuda_local_var_67832_7_non_const_kCenterX = 1;
+__cuda_local_var_67832_7_non_const_kCenterX = (kernelSizeX / 2);
 # 57 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__cuda_local_var_67832_25_non_const_kCenterY = 1;
+__cuda_local_var_67832_35_non_const_kCenterY = (kernelSizeY / 2);
 # 58 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 {
 # 58 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1632,8 +1611,7 @@ k = 0;
 # 58 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 for (; (k < channels); ++k)
 # 58 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-{  float *__T25;
- float __T26;
+{
 # 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
  float __cuda_local_var_67834_10_non_const_sum;
 # 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1645,13 +1623,13 @@ __cuda_local_var_67834_10_non_const_sum = (0.0F);
 # 60 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 m = 0;
 # 60 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-for (; (m < 3); ++m)
+for (; (m < kernelSizeY); ++m)
 # 60 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 {
 # 61 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
  int __cuda_local_var_67836_9_non_const_mm;
 # 61 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__cuda_local_var_67836_9_non_const_mm = (2 - m);
+__cuda_local_var_67836_9_non_const_mm = ((kernelSizeY - 1) - m);
 # 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 {
 # 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1659,7 +1637,7 @@ __cuda_local_var_67836_9_non_const_mm = (2 - m);
 # 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 n = 0;
 # 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-for (; (n < 3); ++n)
+for (; (n < kernelSizeX); ++n)
 # 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 {
 # 63 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1669,17 +1647,17 @@ for (; (n < 3); ++n)
 # 65 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
  int __cuda_local_var_67840_10_non_const_xIndex;
 # 63 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__cuda_local_var_67838_10_non_const_nn = (2 - n);
+__cuda_local_var_67838_10_non_const_nn = ((kernelSizeX - 1) - n);
 # 64 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__cuda_local_var_67839_10_non_const_yIndex = ((__cuda_local_var_67829_6_non_const_i + m) - __cuda_local_var_67832_25_non_const_kCenterY);
+__cuda_local_var_67839_10_non_const_yIndex = ((__cuda_local_var_67829_6_non_const_i + m) - __cuda_local_var_67832_35_non_const_kCenterY);
 # 65 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 __cuda_local_var_67840_10_non_const_xIndex = ((__cuda_local_var_67830_6_non_const_j + n) - __cuda_local_var_67832_7_non_const_kCenterX);
 # 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-if ((((__cuda_local_var_67839_10_non_const_yIndex >= 0) && (__cuda_local_var_67839_10_non_const_yIndex < imageHeight)) && (__cuda_local_var_67840_10_non_const_xIndex >= 0)) && (__cuda_local_var_67840_10_non_const_xIndex < imageWidth))
+if ((((__cuda_local_var_67839_10_non_const_yIndex >= 0) && (__cuda_local_var_67839_10_non_const_yIndex < dataSizeY)) && (__cuda_local_var_67840_10_non_const_xIndex >= 0)) && (__cuda_local_var_67840_10_non_const_xIndex < dataSizeX))
 # 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 {
 # 67 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-__cuda_local_var_67834_10_non_const_sum += (((float)(InputImageData[((((__cuda_local_var_67839_10_non_const_yIndex * imageWidth) + __cuda_local_var_67840_10_non_const_xIndex) * channels) + k)])) * (kernel[((3 * __cuda_local_var_67836_9_non_const_mm) + __cuda_local_var_67838_10_non_const_nn)]));
+__cuda_local_var_67834_10_non_const_sum += (((float)(InputImageData[((((__cuda_local_var_67839_10_non_const_yIndex * dataSizeX) + __cuda_local_var_67840_10_non_const_xIndex) * channels) + k)])) * (kernel[((kernelSizeX * __cuda_local_var_67836_9_non_const_mm) + __cuda_local_var_67838_10_non_const_nn)]));
 # 68 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 }
 # 69 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1687,7 +1665,7 @@ __cuda_local_var_67834_10_non_const_sum += (((float)(InputImageData[((((__cuda_l
 # 70 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 } }
 # 71 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-((__T25 = ((float *)(outputImageData + ((((__cuda_local_var_67829_6_non_const_i * imageWidth) + __cuda_local_var_67830_6_non_const_j) * channels) + k)))) , (void)(__T26 = __cuda_local_var_67834_10_non_const_sum)) , (void)(_ZN37_INTERNAL_f6038529_7_main_cu_1b34e0029atomicAddEPff(__T25, __T26));
+(outputImageData[((((__cuda_local_var_67829_6_non_const_i * dataSizeX) + __cuda_local_var_67830_6_non_const_j) * channels) + k)]) = ((unsigned char)__cuda_local_var_67834_10_non_const_sum);
 # 72 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
 } }
 # 73 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
@@ -1714,7 +1692,7 @@ unsigned vz){
 # 423 "/opt/cuda/include/vector_types.h"
 }}
 __asm__(".align 2");
-___device__(static  __no_sc__) __inline__ void _ZN4dim3C2Ejjj( struct dim3 *const this,  unsigned __T27,  unsigned __T28,  unsigned __T29){ {  _ZN4dim3C1Ejjj(this, __T27, __T28, __T29);  }}
+___device__(static  __no_sc__) __inline__ void _ZN4dim3C2Ejjj( struct dim3 *const this,  unsigned __T23,  unsigned __T24,  unsigned __T25){ {  _ZN4dim3C1Ejjj(this, __T23, __T24, __T25);  }}
 # 300 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 ___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt5frexpfPi(
 # 300 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
@@ -1722,10 +1700,10 @@ float __x,
 # 300 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 int *__exp){
 # 301 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
-{  float __T30;
- int *__T31;
+{  float __T26;
+ int *__T27;
 # 301 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
-return ((__T30 = __x) , (void)(__T31 = __exp)) , (frexpf(__T30, __T31));
+return ((__T26 = __x) , (void)(__T27 = __exp)) , (frexpf(__T26, __T27));
 # 301 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 }}
 # 319 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
@@ -1735,10 +1713,10 @@ float __x,
 # 319 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 int __exp){
 # 320 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
-{  float __T32;
- int __T33;
+{  float __T28;
+ int __T29;
 # 320 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
-return ((__T32 = __x) , (void)(__T33 = __exp)) , (ldexpf(__T32, __T33));
+return ((__T28 = __x) , (void)(__T29 = __exp)) , (ldexpf(__T28, __T29));
 # 320 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 }}
 # 388 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
@@ -1748,9 +1726,9 @@ float __x,
 # 388 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 float __y){
 # 389 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
-{  float __T34;
- float __T35;
+{  float __T30;
+ float __T31;
 # 389 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
-return ((__T34 = __x) , (void)(__T35 = __y)) , (powf(__T34, __T35));
+return ((__T30 = __x) , (void)(__T31 = __y)) , (powf(__T30, __T31));
 # 389 "/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include/c++/cmath" 3
 }}
