@@ -12,6 +12,8 @@
 
 using namespace std;
 
+__constant__ float imageKernel_c[kernelHeight * kernelWidth];
+
 void sequentialConvolution(const unsigned char*inputImageData, const float *kernel ,unsigned char * outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels)
 {
 	int i, j, m, n, mm, nn;
@@ -51,8 +53,8 @@ void sequentialConvolution(const unsigned char*inputImageData, const float *kern
 }
 
 __global__ void gpu1 (const unsigned char * InputImageData, const float * kernel, unsigned char* outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) {
-	int i = blockIdx.x * blockDim.x + threadIdx.x;
-	int j = blockIdx.y * blockDim.y + threadIdx.y;
+	int j = blockIdx.x * blockDim.x + threadIdx.x;
+	int i = blockIdx.y * blockDim.y + threadIdx.y;
 	if (i < dataSizeY && j < dataSizeX) {
 		int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2;
 		for (int k = 0; k < channels; ++k) {
@@ -118,10 +120,8 @@ int main(int argc, char* argv[]){
 	cudaMemcpy(image_in_gpu, image_in, size * sizeof(unsigned char), cudaMemcpyHostToDevice);
 	cudaMemcpy(imageKernel_gpu, imageKernel, kernelHeight * kernelWidth * sizeof(float), cudaMemcpyHostToDevice);
 
-	// --------------------------------------------------------
-
 	// creating blocks and grids
-	dim3 block(16, 16);
+	dim3 block(32, 32);
 	dim3 grid((imageHeight + block.x - 1) / block.x, (imageWidth + block.y - 1) / block.y);
 
 	// launching GPU1 kernel
@@ -131,16 +131,16 @@ int main(int argc, char* argv[]){
 
 	cudaMemcpy(image_gpu1, device_image_gpu1, size * sizeof(unsigned char), cudaMemcpyDeviceToHost);
 	string gpu1_png(argv[2]);
-	gpu1_png.pop_back();
-	gpu1_png.pop_back();
-	gpu1_png.pop_back();
-	gpu1_png.pop_back();
+	gpu1_png.pop_back(); gpu1_png.pop_back(); gpu1_png.pop_back(); gpu1_png.pop_back();
 	gpu1_png += "-GPU1.png";
 	stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, imageChannels, image_gpu1, 0);
 
-	// allocate imageKernel in constant memory
-	__constant__ float imageKernel_c[kernelHeight * kernelWidth];
+	// copying imageKernel to imageKernel_c(constant memory)
 	cudaMemcpyToSymbol(imageKernel_c, imageKernel, kernelHeight * kernelWidth * sizeof(float));
+
+	string gpu2_png(argv[2]);
+	gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back();
+	gpu2_png += "-GPU2.png";
 
 	// launching GPU2 kernel
 	// TODO : Writing GPU2 + Timing GPU2 Kernel

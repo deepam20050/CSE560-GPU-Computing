@@ -11,6 +11,7 @@
 .address_size 64
 
 	// .globl	_Z4gpu1PKhPKfPhiiiii
+.const .align 4 .b8 imageKernel_c[36];
 
 .visible .entry _Z4gpu1PKhPKfPhiiiii(
 	.param .u64 _Z4gpu1PKhPKfPhiiiii_param_0,
@@ -49,20 +50,20 @@
 	mov.u32 	%r52, %ctaid.y;
 	mov.u32 	%r53, %tid.y;
 	mad.lo.s32 	%r2, %r52, %r51, %r53;
-	setp.ge.s32 	%p1, %r1, %r46;
-	setp.ge.s32 	%p2, %r2, %r45;
+	setp.ge.s32 	%p1, %r2, %r46;
+	setp.ge.s32 	%p2, %r1, %r45;
 	or.pred  	%p3, %p2, %p1;
 	setp.lt.s32 	%p4, %r47, 1;
 	or.pred  	%p5, %p3, %p4;
 	@%p5 bra 	$L__BB0_33;
 
 	setp.gt.s32 	%p6, %r44, 0;
-	mad.lo.s32 	%r54, %r1, %r45, %r2;
+	mad.lo.s32 	%r54, %r2, %r45, %r1;
 	mul.lo.s32 	%r3, %r54, %r47;
 	shr.u32 	%r55, %r43, 31;
 	add.s32 	%r56, %r43, %r55;
 	shr.s32 	%r57, %r56, 1;
-	sub.s32 	%r4, %r2, %r57;
+	sub.s32 	%r4, %r1, %r57;
 	@%p6 bra 	$L__BB0_8;
 	bra.uni 	$L__BB0_2;
 
@@ -77,7 +78,7 @@ $L__BB0_8:
 	shr.u32 	%r66, %r44, 31;
 	add.s32 	%r67, %r44, %r66;
 	shr.s32 	%r68, %r67, 1;
-	sub.s32 	%r21, %r1, %r68;
+	sub.s32 	%r21, %r2, %r68;
 
 $L__BB0_9:
 	setp.lt.s32 	%p11, %r43, 1;

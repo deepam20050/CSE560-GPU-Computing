@@ -66899,6 +66899,8 @@ extern "C" int stbi_write_jpg(char const *filename, int x, int y, int comp, cons
 
 using namespace std;
 
+__attribute__((constant)) float imageKernel_c[3 * 3];
+
 void sequentialConvolution(const unsigned char*inputImageData, const float *kernel ,unsigned char * outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels)
 {
  int i, j, m, n, mm, nn;
@@ -66938,8 +66940,8 @@ void sequentialConvolution(const unsigned char*inputImageData, const float *kern
 }
 
 __attribute__((global)) void gpu1 (const unsigned char * InputImageData, const float * kernel, unsigned char* outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) {
- int i = blockIdx.x * blockDim.x + threadIdx.x;
- int j = blockIdx.y * blockDim.y + threadIdx.y;
+ int j = blockIdx.x * blockDim.x + threadIdx.x;
+ int i = blockIdx.y * blockDim.y + threadIdx.y;
  if (i < dataSizeY && j < dataSizeX) {
   int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2;
   for (int k = 0; k < channels; ++k) {
@@ -67023,6 +67025,8 @@ int main(int argc, char* argv[]){
  gpu1_png += "-GPU1.png";
  stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, 1, image_gpu1, 0);
 
+
+ cudaMemcpyToSymbol(imageKernel_c, imageKernel, 3 * 3 * sizeof(float));
 
 
 
