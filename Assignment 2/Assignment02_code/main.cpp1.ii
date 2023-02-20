@@ -67840,7 +67840,7 @@ __attribute__((global)) void gpu1 (const unsigned char * InputImageData, const f
      int nn = kernelSizeX - 1 - n;
      int yIndex = i + m - kCenterY;
      int xIndex = j + n - kCenterX;
-     if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX){
+     if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX) {
       sum += InputImageData[(yIndex * dataSizeX + xIndex) * channels + k] * kernel[kernelSizeX * mm + nn];
      }
     }
@@ -67848,6 +67848,44 @@ __attribute__((global)) void gpu1 (const unsigned char * InputImageData, const f
    outputImageData[(i * dataSizeX + j) * channels + k] = sum;
   }
  }
+}
+
+__attribute__((global)) void gpu2 (const unsigned char * InputImageData, unsigned char* outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) {
+  int j = blockIdx.x * blockDim.x + threadIdx.x;
+ int i = blockIdx.y * blockDim.y + threadIdx.y;
+  int tx = threadIdx.x;
+  int ty = threadIdx.y;
+  int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2;
+  __attribute__((shared)) unsigned char tile[32][32][1];
+  for (int k = 0; k < channels; ++k) {
+    for (int m = 0; m < kernelSizeY; ++m) {
+      for (int n = 0; n < kernelSizeX; ++n) {
+        int yIndex = i + m - kCenterY;
+        int xIndex = j + n - kCenterX;
+        if( yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX) {
+          tile[ty + m][tx + n][k] = InputImageData[(yIndex * dataSizeX + xIndex) * channels + k];
+        } else {
+          tile[ty + m][tx + n][k] = 0;
+        }
+      }
+    }
+  }
+  __syncthreads();
+  for (int k = 0; k < channels; ++k) {
+    float sum = 0.0f;
+    for (int m = 0; m < kernelSizeY; ++m) {
+      int mm = kernelSizeY - 1 - m;
+      for (int n = 0; n < kernelSizeX; ++n) {
+        int nn = kernelSizeX - 1 - n;
+        int yIndex = i + m - kCenterY;
+        int xIndex = j + n - kCenterX;
+        if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX) {
+          sum += tile[ty + m][tx + n][k] * imageKernel_c[kernelSizeX * mm + nn];
+        }
+      }
+    }
+    outputImageData[(i * dataSizeX + j) * channels + k] = sum;
+  }
 }
 
 int main(int argc, char* argv[]){
@@ -67906,10 +67944,7 @@ int main(int argc, char* argv[]){
 
  cudaMemcpy(image_gpu1, device_image_gpu1, size * sizeof(unsigned char), cudaMemcpyDeviceToHost);
  string gpu1_png(argv[2]);
- gpu1_png.pop_back();
- gpu1_png.pop_back();
- gpu1_png.pop_back();
- gpu1_png.pop_back();
+ gpu1_png.pop_back(); gpu1_png.pop_back(); gpu1_png.pop_back(); gpu1_png.pop_back();
  gpu1_png += "-GPU1.png";
  stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, 1, image_gpu1, 0);
 
@@ -67918,6 +67953,14 @@ int main(int argc, char* argv[]){
 
 
 
+ gpu2<<<grid, block>>>(image_in_gpu, device_image_gpu2, 3, 3, imageWidth, imageHeight, 1);
+ cudaDeviceSynchronize();
+
+ cudaMemcpy(image_gpu2, device_image_gpu2, size * sizeof(unsigned char), cudaMemcpyDeviceToHost);
+ string gpu2_png(argv[2]);
+ gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back();
+ gpu2_png += "-GPU2.png";
+ stbi_write_png(gpu2_png.c_str(), imageWidth, imageHeight, 1, image_gpu2, 0);
 
 
  free(image_out);

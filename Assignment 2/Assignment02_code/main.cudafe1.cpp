@@ -72828,108 +72828,194 @@ sum += ((InputImageData[(((yIndex * dataSizeX) + xIndex) * channels) + k]) * (ke
 } 
 #endif
 # 78 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
-int main(int argc, char *argv[]) { 
+void gpu2(const unsigned char *InputImageData, unsigned char *outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) ;
+#if 0
+# 78
+{ 
 # 79
-if (argc < 3) { 
+int j = ((__device_builtin_variable_blockIdx.x) * (__device_builtin_variable_blockDim.x)) + (__device_builtin_variable_threadIdx.x); 
 # 80
-(((((cout << ("Usage: "))) << (argv[0]))) << (" <image_in> <image_out>\n")); 
+int i = ((__device_builtin_variable_blockIdx.y) * (__device_builtin_variable_blockDim.y)) + (__device_builtin_variable_threadIdx.y); 
 # 81
-return 0; 
+int tx = __device_builtin_variable_threadIdx.x; 
 # 82
-}  
+int ty = __device_builtin_variable_threadIdx.y; 
+# 83
+int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2; 
 # 84
-int imageWidth, imageHeight, bpp; 
+__attribute__((unused)) static unsigned char tile[32][32][1]; 
 # 85
-const unsigned char *image_in = stbi_load(argv[1], &imageWidth, &imageHeight, &bpp, 1); 
+for (int k = 0; k < channels; ++k) { 
 # 86
-if ((bpp != 1) || (1 != 1)) { 
+for (int m = 0; m < kernelSizeY; ++m) { 
 # 87
-(cout << ("Input image must be 8 bits per pixel, and sigle channel (grayscale).\n")); 
+for (int n = 0; n < kernelSizeX; ++n) { 
 # 88
-return 0; 
+int yIndex = (i + m) - kCenterY; 
 # 89
-}  
+int xIndex = (j + n) - kCenterX; 
 # 90
-(((((((((cout << ("Image size: "))) << imageHeight)) << (" x "))) << imageWidth)) << (std::endl)); 
+if ((yIndex >= 0) && (yIndex < dataSizeY) && (xIndex >= 0) && (xIndex < dataSizeX)) { 
+# 91
+(((tile[ty + m])[tx + n])[k]) = (InputImageData[(((yIndex * dataSizeX) + xIndex) * channels) + k]); 
+# 92
+} else { 
 # 93
-unsigned char *image_out = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
+(((tile[ty + m])[tx + n])[k]) = (0); 
 # 94
-unsigned char *image_gpu1 = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
-# 95
-unsigned char *image_gpu2 = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
-# 98
-float imageKernel[3 * 3]; 
-# 99
-for (int i = 0; i < (3 * 3); i++) { 
-# 100
-(imageKernel[i]) = ((1.0) / (3 * 3)); 
-# 101
 }  
+# 95
+}  
+# 96
+}  
+# 97
+}  
+# 98
+__syncthreads(); 
+# 99
+for (int k = 0; k < channels; ++k) { 
+# 100
+float sum = (0.0F); 
+# 101
+for (int m = 0; m < kernelSizeY; ++m) { 
+# 102
+int mm = (kernelSizeY - 1) - m; 
+# 103
+for (int n = 0; n < kernelSizeX; ++n) { 
 # 104
-sequentialConvolution(image_in, imageKernel, image_out, 3, 3, imageWidth, imageHeight, 1); 
+int nn = (kernelSizeX - 1) - n; 
+# 105
+int yIndex = (i + m) - kCenterY; 
+# 106
+int xIndex = (j + n) - kCenterX; 
+# 107
+if ((yIndex >= 0) && (yIndex < dataSizeY) && (xIndex >= 0) && (xIndex < dataSizeX)) { 
 # 108
-stbi_write_png(argv[2], imageWidth, imageHeight, 1, image_out, 0); 
+sum += ((((tile[ty + m])[tx + n])[k]) * (imageKernel_c[(kernelSizeX * mm) + nn])); 
+# 109
+}  
+# 110
+}  
+# 111
+}  
+# 112
+(outputImageData[(((i * dataSizeX) + j) * channels) + k]) = sum; 
 # 113
-int size = imageWidth * imageHeight; 
+}  
 # 114
-unsigned char *device_image_gpu1, *device_image_gpu2, *image_in_gpu; 
-# 115
-float *imageKernel_gpu; 
-# 116
-cudaMalloc((void **)(&device_image_gpu1), size * sizeof(unsigned char)); 
+} 
+#endif
+# 116 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/Assignment02_code/src/main.cu"
+int main(int argc, char *argv[]) { 
 # 117
-cudaMalloc((void **)(&device_image_gpu2), size * sizeof(unsigned char)); 
+if (argc < 3) { 
 # 118
-cudaMalloc((void **)(&image_in_gpu), size * sizeof(unsigned char)); 
+(((((cout << ("Usage: "))) << (argv[0]))) << (" <image_in> <image_out>\n")); 
 # 119
-cudaMalloc((void **)(&imageKernel_gpu), (3 * 3) * sizeof(float)); 
-# 120
-cudaMemcpy(image_in_gpu, image_in, size * sizeof(unsigned char), cudaMemcpyHostToDevice); 
-# 121
-cudaMemcpy(imageKernel_gpu, imageKernel, (3 * 3) * sizeof(float), cudaMemcpyHostToDevice); 
-# 124
-dim3 block(16, 16); 
-# 125
-dim3 grid(((imageHeight + (block.x)) - (1)) / (block.x), ((imageWidth + (block.y)) - (1)) / (block.y)); 
-# 129
-(__cudaPushCallConfiguration(grid, block)) ? (void)0 : gpu1(image_in_gpu, imageKernel_gpu, device_image_gpu1, 3, 3, imageWidth, imageHeight, 1); 
-# 130
-cudaDeviceSynchronize(); 
-# 132
-cudaMemcpy(image_gpu1, device_image_gpu1, size * sizeof(unsigned char), cudaMemcpyDeviceToHost); 
-# 133
-std::string gpu1_png(argv[2]); 
-# 134
-gpu1_png.pop_back(); 
-# 135
-gpu1_png.pop_back(); 
-# 136
-gpu1_png.pop_back(); 
-# 137
-gpu1_png.pop_back(); 
-# 138
-(gpu1_png += ("-GPU1.png")); 
-# 139
-stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, 1, image_gpu1, 0); 
-# 142
-cudaMemcpyToSymbol(imageKernel_c, imageKernel, (3 * 3) * sizeof(float)); 
-# 148
-free(image_out); 
-# 149
-free(image_gpu1); 
-# 150
-free(image_gpu2); 
-# 151
-cudaFree(device_image_gpu1); 
-# 152
-cudaFree(device_image_gpu2); 
-# 153
-cudaFree(image_in_gpu); 
-# 154
-cudaFree(imageKernel_gpu); 
-# 155
 return 0; 
+# 120
+}  
+# 122
+int imageWidth, imageHeight, bpp; 
+# 123
+const unsigned char *image_in = stbi_load(argv[1], &imageWidth, &imageHeight, &bpp, 1); 
+# 124
+if ((bpp != 1) || (1 != 1)) { 
+# 125
+(cout << ("Input image must be 8 bits per pixel, and sigle channel (grayscale).\n")); 
+# 126
+return 0; 
+# 127
+}  
+# 128
+(((((((((cout << ("Image size: "))) << imageHeight)) << (" x "))) << imageWidth)) << (std::endl)); 
+# 131
+unsigned char *image_out = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
+# 132
+unsigned char *image_gpu1 = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
+# 133
+unsigned char *image_gpu2 = (unsigned char *)malloc((imageWidth * imageHeight) * sizeof(unsigned char)); 
+# 136
+float imageKernel[3 * 3]; 
+# 137
+for (int i = 0; i < (3 * 3); i++) { 
+# 138
+(imageKernel[i]) = ((1.0) / (3 * 3)); 
+# 139
+}  
+# 142
+sequentialConvolution(image_in, imageKernel, image_out, 3, 3, imageWidth, imageHeight, 1); 
+# 146
+stbi_write_png(argv[2], imageWidth, imageHeight, 1, image_out, 0); 
+# 151
+int size = imageWidth * imageHeight; 
+# 152
+unsigned char *device_image_gpu1, *device_image_gpu2, *image_in_gpu; 
+# 153
+float *imageKernel_gpu; 
+# 154
+cudaMalloc((void **)(&device_image_gpu1), size * sizeof(unsigned char)); 
+# 155
+cudaMalloc((void **)(&device_image_gpu2), size * sizeof(unsigned char)); 
 # 156
+cudaMalloc((void **)(&image_in_gpu), size * sizeof(unsigned char)); 
+# 157
+cudaMalloc((void **)(&imageKernel_gpu), (3 * 3) * sizeof(float)); 
+# 158
+cudaMemcpy(image_in_gpu, image_in, size * sizeof(unsigned char), cudaMemcpyHostToDevice); 
+# 159
+cudaMemcpy(imageKernel_gpu, imageKernel, (3 * 3) * sizeof(float), cudaMemcpyHostToDevice); 
+# 162
+dim3 block(16, 16); 
+# 163
+dim3 grid(((imageHeight + (block.x)) - (1)) / (block.x), ((imageWidth + (block.y)) - (1)) / (block.y)); 
+# 167
+(__cudaPushCallConfiguration(grid, block)) ? (void)0 : gpu1(image_in_gpu, imageKernel_gpu, device_image_gpu1, 3, 3, imageWidth, imageHeight, 1); 
+# 168
+cudaDeviceSynchronize(); 
+# 170
+cudaMemcpy(image_gpu1, device_image_gpu1, size * sizeof(unsigned char), cudaMemcpyDeviceToHost); 
+# 171
+std::string gpu1_png(argv[2]); 
+# 172
+gpu1_png.pop_back(); gpu1_png.pop_back(); gpu1_png.pop_back(); gpu1_png.pop_back(); 
+# 173
+(gpu1_png += ("-GPU1.png")); 
+# 174
+stbi_write_png(gpu1_png.c_str(), imageWidth, imageHeight, 1, image_gpu1, 0); 
+# 177
+cudaMemcpyToSymbol(imageKernel_c, imageKernel, (3 * 3) * sizeof(float)); 
+# 181
+(__cudaPushCallConfiguration(grid, block)) ? (void)0 : gpu2(image_in_gpu, device_image_gpu2, 3, 3, imageWidth, imageHeight, 1); 
+# 182
+cudaDeviceSynchronize(); 
+# 184
+cudaMemcpy(image_gpu2, device_image_gpu2, size * sizeof(unsigned char), cudaMemcpyDeviceToHost); 
+# 185
+std::string gpu2_png(argv[2]); 
+# 186
+gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back(); 
+# 187
+(gpu2_png += ("-GPU2.png")); 
+# 188
+stbi_write_png(gpu2_png.c_str(), imageWidth, imageHeight, 1, image_gpu2, 0); 
+# 191
+free(image_out); 
+# 192
+free(image_gpu1); 
+# 193
+free(image_gpu2); 
+# 194
+cudaFree(device_image_gpu1); 
+# 195
+cudaFree(device_image_gpu2); 
+# 196
+cudaFree(image_in_gpu); 
+# 197
+cudaFree(imageKernel_gpu); 
+# 198
+return 0; 
+# 199
 } 
 
 # 1 "main.cudafe1.stub.c"

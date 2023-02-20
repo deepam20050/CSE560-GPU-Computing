@@ -65,7 +65,7 @@ __global__ void gpu1 (const unsigned char * InputImageData, const float * kernel
 					int nn = kernelSizeX - 1 - n;
 					int yIndex = i + m - kCenterY;
 					int xIndex = j + n - kCenterX;
-					if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX){
+					if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX) {
 						sum += InputImageData[(yIndex * dataSizeX + xIndex) * channels + k] * kernel[kernelSizeX * mm + nn];
 					}
 				}
@@ -73,6 +73,44 @@ __global__ void gpu1 (const unsigned char * InputImageData, const float * kernel
 			outputImageData[(i * dataSizeX + j) * channels + k] = sum;
 		}
 	}
+}
+
+__global__ void gpu2 (const unsigned char * InputImageData, unsigned char* outputImageData, int kernelSizeX, int kernelSizeY, int dataSizeX, int dataSizeY, int channels) {
+  int j = blockIdx.x * blockDim.x + threadIdx.x;
+	int i = blockIdx.y * blockDim.y + threadIdx.y;
+  int tx = threadIdx.x;
+  int ty = threadIdx.y;
+  int kCenterX = kernelSizeX / 2, kCenterY = kernelSizeY / 2;
+  __shared__ unsigned char tile[32][32][imageChannels];
+  for (int k = 0; k < channels; ++k) {
+    for (int m = 0; m < kernelSizeY; ++m) {
+      for (int n = 0; n < kernelSizeX; ++n) {
+        int yIndex = i + m - kCenterY;
+        int xIndex = j + n - kCenterX;
+        if( yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX) {
+          tile[ty + m][tx + n][k] = InputImageData[(yIndex * dataSizeX + xIndex) * channels + k];
+        } else {
+          tile[ty + m][tx + n][k] = 0;
+        }
+      }
+    }
+  }
+  __syncthreads();
+  for (int k = 0; k < channels; ++k) {
+    float sum = 0.0f;
+    for (int m = 0; m < kernelSizeY; ++m) {
+      int mm = kernelSizeY - 1 - m;
+      for (int n = 0; n < kernelSizeX; ++n) {
+        int nn = kernelSizeX - 1 - n;
+        int yIndex = i + m - kCenterY;
+        int xIndex = j + n - kCenterX;
+        if(yIndex >= 0 && yIndex < dataSizeY && xIndex >= 0 && xIndex < dataSizeX) {
+          sum += tile[ty + m][tx + n][k] * imageKernel_c[kernelSizeX * mm + nn];
+        }
+      }
+    }
+    outputImageData[(i * dataSizeX + j) * channels + k] = sum;
+  }
 }
 
 int main(int argc, char* argv[]){
@@ -121,7 +159,7 @@ int main(int argc, char* argv[]){
 	cudaMemcpy(imageKernel_gpu, imageKernel, kernelHeight * kernelWidth * sizeof(float), cudaMemcpyHostToDevice);
 
 	// creating blocks and grids
-	dim3 block(32, 32);
+	dim3 block(16, 16);
 	dim3 grid((imageHeight + block.x - 1) / block.x, (imageWidth + block.y - 1) / block.y);
 
 	// launching GPU1 kernel
@@ -138,12 +176,16 @@ int main(int argc, char* argv[]){
 	// copying imageKernel to imageKernel_c(constant memory)
 	cudaMemcpyToSymbol(imageKernel_c, imageKernel, kernelHeight * kernelWidth * sizeof(float));
 
+	// launching GPU2 kernel
+	// TODO : Timing GPU2 Kernel
+	gpu2<<<grid, block>>>(image_in_gpu, device_image_gpu2, kernelWidth, kernelHeight, imageWidth, imageHeight, imageChannels);
+	cudaDeviceSynchronize();
+
+	cudaMemcpy(image_gpu2, device_image_gpu2, size * sizeof(unsigned char), cudaMemcpyDeviceToHost);
 	string gpu2_png(argv[2]);
 	gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back(); gpu2_png.pop_back();
 	gpu2_png += "-GPU2.png";
-
-	// launching GPU2 kernel
-	// TODO : Writing GPU2 + Timing GPU2 Kernel
+	stbi_write_png(gpu2_png.c_str(), imageWidth, imageHeight, imageChannels, image_gpu2, 0);
 
 	//Deallocate memory
 	free(image_out);
