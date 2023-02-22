@@ -1,0 +1,186 @@
+Image size: 1024 x 1024
+==31910== NVPROF is profiling process 31910, command: ./Assignment02 ./images/img1024.png img1024.png
+[CPU] 285315.490723 microseconds.
+==31910== Profiling application: ./Assignment02 ./images/img1024.png img1024.png
+==31910== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   45.71%  1.2654ms         1  1.2654ms  1.2654ms  1.2654ms  gpu1(unsigned char const *, float const *, unsigned char*, int, int, int, int, int)
+                   17.28%  478.21us         3  159.40us  159.36us  159.46us  [CUDA memcpy DtoH]
+                   16.02%  443.49us         1  443.49us  443.49us  443.49us  gpu2(unsigned char const *, unsigned char*, int, int, int, int, int)
+                    8.89%  245.95us         1  245.95us  245.95us  245.95us  gpu_tex(__int64, unsigned char*, int, int, int, int, int)
+                    6.10%  168.86us         3  56.288us     576ns  167.71us  [CUDA memcpy HtoD]
+                    6.01%  166.24us         1  166.24us  166.24us  166.24us  [CUDA memcpy HtoA]
+      API calls:   52.76%  80.997ms         5  16.199ms  2.0000us  80.898ms  cudaMalloc
+                   43.91%  67.413ms         1  67.413ms  67.413ms  67.413ms  cuLibraryLoadData
+                    1.43%  2.1965ms         5  439.30us  149.53us  642.27us  cudaMemcpy
+                    1.36%  2.0818ms         3  693.94us  370.81us  1.2668ms  cudaDeviceSynchronize
+                    0.18%  276.98us         5  55.396us  4.9780us  98.933us  cudaFree
+                    0.10%  149.13us         1  149.13us  149.13us  149.13us  cudaMemcpy2DToArray
+                    0.09%  137.43us         1  137.43us  137.43us  137.43us  cudaMallocArray
+                    0.08%  116.79us       114  1.0240us     149ns  47.070us  cuDeviceGetAttribute
+                    0.04%  64.549us         3  21.516us  18.062us  25.487us  cudaLaunchKernel
+                    0.02%  33.958us         1  33.958us  33.958us  33.958us  cuDeviceGetName
+                    0.02%  29.189us         1  29.189us  29.189us  29.189us  cudaMemcpyToSymbol
+                    0.01%  17.972us         1  17.972us  17.972us  17.972us  cudaCreateTextureObject
+                    0.00%  7.4580us         1  7.4580us  7.4580us  7.4580us  cuDeviceGetPCIBusId
+                    0.00%  2.4290us         3     809ns     236ns  1.8720us  cuDeviceGetCount
+                    0.00%  1.0250us         1  1.0250us  1.0250us  1.0250us  cudaCreateChannelDesc
+                    0.00%     796ns         1     796ns     796ns     796ns  cuModuleGetLoadingMode
+                    0.00%     645ns         2     322ns     170ns     475ns  cuDeviceGet
+                    0.00%     416ns         1     416ns     416ns     416ns  cuDeviceTotalMem
+                    0.00%     229ns         1     229ns     229ns     229ns  cuDeviceGetUuid
+Image size: 128 x 128
+==31941== NVPROF is profiling process 31941, command: ./Assignment02 ./images/img128.png img128.png
+==31941== [CPU] 5378.306866 microseconds.
+Profiling application: ./Assignment02 ./images/img128.png img128.png
+==31941== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   37.22%  21.472us         1  21.472us  21.472us  21.472us  gpu1(unsigned char const *, float const *, unsigned char*, int, int, int, int, int)
+                   21.80%  12.576us         1  12.576us  12.576us  12.576us  gpu2(unsigned char const *, unsigned char*, int, int, int, int, int)
+                   14.59%  8.4160us         3  2.8050us  2.6240us  2.9120us  [CUDA memcpy DtoH]
+                   14.03%  8.0960us         1  8.0960us  8.0960us  8.0960us  gpu_tex(__int64, unsigned char*, int, int, int, int, int)
+                    6.82%  3.9360us         1  3.9360us  3.9360us  3.9360us  [CUDA memcpy HtoA]
+                    5.55%  3.2000us         3  1.0660us     576ns  1.9840us  [CUDA memcpy HtoD]
+      API calls:   98.63%  111.21ms         5  22.243ms  1.5100us  111.21ms  cudaMalloc
+                    0.66%  745.52us         1  745.52us  745.52us  745.52us  cuLibraryLoadData
+                    0.31%  351.07us       114  3.0790us     510ns  127.82us  cuDeviceGetAttribute
+                    0.08%  87.188us         5  17.437us  6.7950us  22.654us  cudaMemcpy
+                    0.07%  77.611us         1  77.611us  77.611us  77.611us  cuDeviceGetName
+                    0.07%  75.345us         5  15.069us  1.5390us  62.273us  cudaFree
+                    0.07%  73.454us         1  73.454us  73.454us  73.454us  cudaMallocArray
+                    0.04%  46.728us         3  15.576us  10.169us  22.441us  cudaDeviceSynchronize
+                    0.03%  35.432us         3  11.810us  9.0480us  17.273us  cudaLaunchKernel
+                    0.01%  13.802us         1  13.802us  13.802us  13.802us  cudaMemcpy2DToArray
+                    0.01%  12.050us         1  12.050us  12.050us  12.050us  cuDeviceGetPCIBusId
+                    0.01%  10.333us         1  10.333us  10.333us  10.333us  cudaMemcpyToSymbol
+                    0.01%  7.5130us         1  7.5130us  7.5130us  7.5130us  cudaCreateTextureObject
+                    0.01%  6.1690us         3  2.0560us     674ns  4.7060us  cuDeviceGetCount
+                    0.00%  2.2280us         2  1.1140us     603ns  1.6250us  cuDeviceGet
+                    0.00%  1.1740us         1  1.1740us  1.1740us  1.1740us  cuDeviceTotalMem
+                    0.00%     999ns         1     999ns     999ns     999ns  cuModuleGetLoadingMode
+                    0.00%     951ns         1     951ns     951ns     951ns  cuDeviceGetUuid
+                    0.00%     573ns         1     573ns     573ns     573ns  cudaCreateChannelDesc
+Image size: 2048 x 2048
+==31965== NVPROF is profiling process 31965, command: ./Assignment02 ./images/img2048.png img2048.png
+[CPU] 1132893.066406 microseconds.
+==31965== Profiling application: ./Assignment02 ./images/img2048.png img2048.png
+==31965== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   39.20%  5.0935ms         1  5.0935ms  5.0935ms  5.0935ms  gpu1(unsigned char const *, float const *, unsigned char*, int, int, int, int, int)
+                   28.28%  3.6739ms         3  1.2246ms  1.1964ms  1.2570ms  [CUDA memcpy DtoH]
+                   13.54%  1.7590ms         1  1.7590ms  1.7590ms  1.7590ms  gpu2(unsigned char const *, unsigned char*, int, int, int, int, int)
+                    8.12%  1.0546ms         1  1.0546ms  1.0546ms  1.0546ms  gpu_tex(__int64, unsigned char*, int, int, int, int, int)
+                    5.44%  706.95us         1  706.95us  706.95us  706.95us  [CUDA memcpy HtoA]
+                    5.43%  705.15us         3  235.05us     576ns  703.97us  [CUDA memcpy HtoD]
+      API calls:   84.69%  92.630ms         5  18.526ms  42.513us  92.450ms  cudaMalloc
+                    7.42%  8.1156ms         3  2.7052ms  1.2465ms  5.0953ms  cudaDeviceSynchronize
+                    6.16%  6.7366ms         5  1.3473ms  227.94us  2.0295ms  cudaMemcpy
+                    0.60%  658.83us         5  131.77us  118.76us  135.59us  cudaFree
+                    0.55%  603.27us         1  603.27us  603.27us  603.27us  cudaMemcpy2DToArray
+                    0.22%  245.70us         1  245.70us  245.70us  245.70us  cuLibraryLoadData
+                    0.11%  125.75us         1  125.75us  125.75us  125.75us  cudaMallocArray
+                    0.10%  110.25us       114     967ns     153ns  44.352us  cuDeviceGetAttribute
+                    0.06%  69.166us         3  23.055us  21.173us  26.561us  cudaLaunchKernel
+                    0.03%  33.037us         1  33.037us  33.037us  33.037us  cuDeviceGetName
+                    0.03%  32.090us         1  32.090us  32.090us  32.090us  cudaMemcpyToSymbol
+                    0.01%  10.832us         1  10.832us  10.832us  10.832us  cudaCreateTextureObject
+                    0.01%  6.2590us         1  6.2590us  6.2590us  6.2590us  cuDeviceGetPCIBusId
+                    0.00%  1.5810us         3     527ns     225ns  1.1300us  cuDeviceGetCount
+                    0.00%     970ns         1     970ns     970ns     970ns  cudaCreateChannelDesc
+                    0.00%     692ns         2     346ns     159ns     533ns  cuDeviceGet
+                    0.00%     362ns         1     362ns     362ns     362ns  cuDeviceTotalMem
+                    0.00%     314ns         1     314ns     314ns     314ns  cuModuleGetLoadingMode
+                    0.00%     253ns         1     253ns     253ns     253ns  cuDeviceGetUuid
+Image size: 256 x 256
+==32007== NVPROF is profiling process 32007, command: ./Assignment02 ./images/img256.png img256.png
+[CPU] 21746.044159 microseconds.
+==32007== Profiling application: ./Assignment02 ./images/img256.png img256.png
+==32007== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   44.13%  80.704us         1  80.704us  80.704us  80.704us  gpu1(unsigned char const *, float const *, unsigned char*, int, int, int, int, int)
+                   17.22%  31.488us         1  31.488us  31.488us  31.488us  gpu2(unsigned char const *, unsigned char*, int, int, int, int, int)
+                   16.76%  30.656us         3  10.218us  10.048us  10.336us  [CUDA memcpy DtoH]
+                   10.24%  18.720us         1  18.720us  18.720us  18.720us  gpu_tex(__int64, unsigned char*, int, int, int, int, int)
+                    6.46%  11.808us         1  11.808us  11.808us  11.808us  [CUDA memcpy HtoA]
+                    5.20%  9.5040us         3  3.1680us     576ns  8.3200us  [CUDA memcpy HtoD]
+      API calls:   98.40%  107.57ms         5  21.515ms  1.4580us  107.57ms  cudaMalloc
+                    0.69%  757.53us         1  757.53us  757.53us  757.53us  cuLibraryLoadData
+                    0.32%  348.26us       114  3.0540us     510ns  126.90us  cuDeviceGetAttribute
+                    0.17%  188.88us         5  37.775us  13.771us  51.556us  cudaMemcpy
+                    0.12%  135.44us         3  45.146us  20.457us  82.291us  cudaDeviceSynchronize
+                    0.07%  74.979us         1  74.979us  74.979us  74.979us  cuDeviceGetName
+                    0.07%  74.430us         1  74.430us  74.430us  74.430us  cudaMallocArray
+                    0.07%  73.233us         5  14.646us  1.4350us  60.813us  cudaFree
+                    0.03%  36.711us         3  12.237us  9.8080us  16.625us  cudaLaunchKernel
+                    0.02%  18.851us         1  18.851us  18.851us  18.851us  cudaMemcpy2DToArray
+                    0.01%  10.774us         1  10.774us  10.774us  10.774us  cudaMemcpyToSymbol
+                    0.01%  8.1050us         1  8.1050us  8.1050us  8.1050us  cuDeviceGetPCIBusId
+                    0.01%  7.6110us         1  7.6110us  7.6110us  7.6110us  cudaCreateTextureObject
+                    0.01%  6.3210us         3  2.1070us     860ns  4.5580us  cuDeviceGetCount
+                    0.00%  2.4000us         2  1.2000us     522ns  1.8780us  cuDeviceGet
+                    0.00%  1.2980us         1  1.2980us  1.2980us  1.2980us  cuDeviceTotalMem
+                    0.00%  1.0590us         1  1.0590us  1.0590us  1.0590us  cuModuleGetLoadingMode
+                    0.00%     865ns         1     865ns     865ns     865ns  cuDeviceGetUuid
+                    0.00%     542ns         1     542ns     542ns     542ns  cudaCreateChannelDesc
+Image size: 512 x 512
+==32028== NVPROF is profiling process 32028, command: ./Assignment02 ./images/img512.png img512.png
+[CPU] 86047.729492 microseconds.
+==32028== Profiling application: ./Assignment02 ./images/img512.png img512.png
+==32028== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   44.65%  312.45us         1  312.45us  312.45us  312.45us  gpu1(unsigned char const *, float const *, unsigned char*, int, int, int, int, int)
+                   17.20%  120.38us         3  40.128us  40.096us  40.160us  [CUDA memcpy DtoH]
+                   16.44%  115.01us         1  115.01us  115.01us  115.01us  gpu2(unsigned char const *, unsigned char*, int, int, int, int, int)
+                    9.22%  64.512us         1  64.512us  64.512us  64.512us  gpu_tex(__int64, unsigned char*, int, int, int, int, int)
+                    6.31%  44.127us         3  14.709us     576ns  42.944us  [CUDA memcpy HtoD]
+                    6.18%  43.232us         1  43.232us  43.232us  43.232us  [CUDA memcpy HtoA]
+      API calls:   97.81%  83.745ms         5  16.749ms  1.5920us  83.737ms  cudaMalloc
+                    0.71%  609.04us         5  121.81us  46.890us  183.23us  cudaMemcpy
+                    0.60%  513.33us         3  171.11us  83.398us  314.38us  cudaDeviceSynchronize
+                    0.27%  233.96us         1  233.96us  233.96us  233.96us  cuLibraryLoadData
+                    0.15%  130.52us         1  130.52us  130.52us  130.52us  cudaMallocArray
+                    0.13%  110.79us       114     971ns     153ns  44.474us  cuDeviceGetAttribute
+                    0.10%  83.380us         5  16.676us  1.7330us  67.464us  cudaFree
+                    0.07%  57.175us         3  19.058us  14.071us  22.980us  cudaLaunchKernel
+                    0.05%  43.815us         1  43.815us  43.815us  43.815us  cudaMemcpy2DToArray
+                    0.04%  34.940us         1  34.940us  34.940us  34.940us  cuDeviceGetName
+                    0.04%  31.979us         1  31.979us  31.979us  31.979us  cudaMemcpyToSymbol
+                    0.01%  12.828us         1  12.828us  12.828us  12.828us  cudaCreateTextureObject
+                    0.01%  8.3270us         1  8.3270us  8.3270us  8.3270us  cuDeviceGetPCIBusId
+                    0.00%  1.6540us         3     551ns     219ns  1.1780us  cuDeviceGetCount
+                    0.00%     815ns         2     407ns     162ns     653ns  cuDeviceGet
+                    0.00%     605ns         1     605ns     605ns     605ns  cudaCreateChannelDesc
+                    0.00%     374ns         1     374ns     374ns     374ns  cuDeviceTotalMem
+                    0.00%     310ns         1     310ns     310ns     310ns  cuModuleGetLoadingMode
+                    0.00%     263ns         1     263ns     263ns     263ns  cuDeviceGetUuid
+Image size: 64 x 64
+==32062== NVPROF is profiling process 32062, command: ./Assignment02 ./images/img64.png img64.png
+[CPU] 1328.853965 microseconds.
+==32062== Profiling application: ./Assignment02 ./images/img64.png img64.png
+==32062== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   29.51%  10.048us         1  10.048us  10.048us  10.048us  gpu2(unsigned char const *, unsigned char*, int, int, int, int, int)
+                   28.95%  9.8560us         1  9.8560us  9.8560us  9.8560us  gpu1(unsigned char const *, float const *, unsigned char*, int, int, int, int, int)
+                   20.96%  7.1360us         1  7.1360us  7.1360us  7.1360us  gpu_tex(__int64, unsigned char*, int, int, int, int, int)
+                    8.65%  2.9440us         3     981ns     832ns  1.0560us  [CUDA memcpy DtoH]
+                    6.39%  2.1770us         3     725ns     576ns  1.0240us  [CUDA memcpy HtoD]
+                    5.54%  1.8880us         1  1.8880us  1.8880us  1.8880us  [CUDA memcpy HtoA]
+      API calls:   98.54%  103.22ms         5  20.644ms  1.5480us  103.21ms  cudaMalloc
+                    0.72%  757.96us         1  757.96us  757.96us  757.96us  cuLibraryLoadData
+                    0.36%  377.19us       114  3.3080us     500ns  149.16us  cuDeviceGetAttribute
+                    0.07%  76.947us         1  76.947us  76.947us  76.947us  cuDeviceGetName
+                    0.07%  76.186us         5  15.237us  1.5240us  63.641us  cudaFree
+                    0.07%  69.735us         1  69.735us  69.735us  69.735us  cudaMallocArray
+                    0.05%  56.409us         5  11.281us  4.0520us  17.282us  cudaMemcpy
+                    0.03%  34.683us         3  11.561us  8.6910us  16.826us  cudaLaunchKernel
+                    0.03%  32.579us         3  10.859us  9.4320us  11.889us  cudaDeviceSynchronize
+                    0.01%  14.206us         1  14.206us  14.206us  14.206us  cudaMemcpy2DToArray
+                    0.01%  9.3570us         1  9.3570us  9.3570us  9.3570us  cudaMemcpyToSymbol
+                    0.01%  8.3950us         1  8.3950us  8.3950us  8.3950us  cuDeviceGetPCIBusId
+                    0.01%  7.5090us         1  7.5090us  7.5090us  7.5090us  cudaCreateTextureObject
+                    0.01%  6.1020us         3  2.0340us     772ns  4.3620us  cuDeviceGetCount
+                    0.00%  2.4100us         2  1.2050us     494ns  1.9160us  cuDeviceGet
+                    0.00%  1.3090us         1  1.3090us  1.3090us  1.3090us  cuDeviceTotalMem
+                    0.00%     988ns         1     988ns     988ns     988ns  cuModuleGetLoadingMode
+                    0.00%     893ns         1     893ns     893ns     893ns  cuDeviceGetUuid
+                    0.00%     507ns         1     507ns     507ns     507ns  cudaCreateChannelDesc
