@@ -1,0 +1,2169 @@
+typedef char __nv_bool;
+# 1150 "/opt/cuda/include/driver_types.h"
+struct cudaArray;
+# 1162 "/opt/cuda/include/driver_types.h"
+struct cudaMipmappedArray;
+# 1513 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut_E;
+# 1516 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut0_E;
+# 1519 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut1_E;
+# 1524 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut2_E;
+# 1512 "/opt/cuda/include/driver_types.h"
+union _ZN16cudaResourceDescUt_E;
+# 2797 "/opt/cuda/include/driver_types.h"
+struct CUstream_st;
+# 27 "/usr/include/bits/types/__locale_t.h" 3
+struct __locale_struct;
+# 11 "/usr/include/bits/types/struct_timespec.h" 3
+struct timespec;
+# 49 "/usr/include/bits/types/struct_FILE.h" 3
+struct _IO_FILE;
+# 71 "/opt/cuda/include/texture_indirect_functions.h"
+struct _Z15__nv_itex_traitIhE;
+# 313 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+enum _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e002Ut13_E {
+# 314 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_default,
+# 316 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_grey,
+# 317 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_grey_alpha,
+# 318 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_rgb,
+# 319 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_rgb_alpha};
+# 345 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi_io_callbacks;
+# 692 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__context;
+# 774 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+enum _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e002Ut14_E {
+# 775 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_ORDER_RGB,
+# 776 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI_ORDER_BGR};
+# 780 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__result_info;
+# 1384 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+enum _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e002Ut15_E {
+# 1385 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__SCAN_load,
+# 1386 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__SCAN_type,
+# 1387 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__SCAN_header};
+# 1690 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__huffman;
+# 1715 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct _ZN10stbi__jpegUt_E;
+# 1701 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__jpeg;
+# 3557 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__resample;
+# 3795 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__zhuffman;
+# 3875 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__zbuf;
+# 4266 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__pngchunk;
+# 4289 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__png;
+# 4296 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+enum _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e002Ut16_E {
+# 4297 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_none,
+# 4298 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_sub,
+# 4299 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_up,
+# 4300 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_avg,
+# 4301 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_paeth,
+# 4303 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_avg_first,
+# 4304 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+STBI__F_paeth_first};
+# 5054 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__bmp_data;
+# 5933 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__pic_packet;
+# 6119 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__gif_lzw;
+# 6126 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__gif;
+# 259 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+struct stbi__write_context;
+# 232 "/usr/include/c++/12.2.1/bits/basic_string.tcc" 3
+struct _ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagE6_Guard;
+# 192 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderE;
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+enum _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEUt_E {
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE17_S_local_capacityE = 15};
+# 216 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+union __C10;
+# 72 "/usr/include/c++/12.2.1/bits/stringfwd.h" 3
+struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE;
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+enum _ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEUt_E {
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEE17_S_local_capacityE = 3};
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+enum _ZNSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEEUt_E {
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEE17_S_local_capacityE = 7};
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+enum _ZNSt7__cxx1112basic_stringIDiSt11char_traitsIDiESaIDiEEUt_E {
+# 213 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIDiSt11char_traitsIDiESaIDiEE17_S_local_capacityE = 3};
+# 73 "/usr/include/c++/12.2.1/bits/cpp_type_traits.h" 3
+struct _ZSt11__true_type;
+# 74 "/usr/include/c++/12.2.1/bits/cpp_type_traits.h" 3
+struct _ZSt12__false_type;
+# 535 "/usr/include/c++/12.2.1/bits/cpp_type_traits.h" 3
+struct _ZSt24__is_memcmp_ordered_withISt4byteS0_Lb1EE;
+# 193 "/usr/include/c++/12.2.1/bits/utility.h" 3
+struct _ZSt10in_place_t;
+# 80 "/usr/include/c++/12.2.1/bits/stl_pair.h" 3
+struct _ZSt21piecewise_construct_t;
+# 93 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt18input_iterator_tag;
+# 99 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt20forward_iterator_tag;
+# 103 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt26bidirectional_iterator_tag;
+# 107 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt26random_access_iterator_tag;
+# 167 "/usr/include/c++/12.2.1/limits" 3
+enum _ZSt17float_round_style {
+# 169 "/usr/include/c++/12.2.1/limits" 3
+_ZSt19round_indeterminate = (-1),
+# 170 "/usr/include/c++/12.2.1/limits" 3
+_ZSt17round_toward_zero,
+# 171 "/usr/include/c++/12.2.1/limits" 3
+_ZSt16round_to_nearest,
+# 172 "/usr/include/c++/12.2.1/limits" 3
+_ZSt21round_toward_infinity,
+# 173 "/usr/include/c++/12.2.1/limits" 3
+_ZSt25round_toward_neg_infinity};
+# 182 "/usr/include/c++/12.2.1/limits" 3
+enum _ZSt18float_denorm_style {
+# 185 "/usr/include/c++/12.2.1/limits" 3
+_ZSt20denorm_indeterminate = (-1),
+# 187 "/usr/include/c++/12.2.1/limits" 3
+_ZSt13denorm_absent,
+# 189 "/usr/include/c++/12.2.1/limits" 3
+_ZSt14denorm_present};
+# 202 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt21__numeric_limits_base;
+# 384 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIbE;
+# 453 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIcE;
+# 520 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIaE;
+# 590 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIhE;
+# 663 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIwE;
+# 797 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIDsE;
+# 858 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIDiE;
+# 920 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIsE;
+# 987 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsItE;
+# 1060 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIiE;
+# 1127 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIjE;
+# 1199 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIlE;
+# 1266 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsImE;
+# 1339 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIxE;
+# 1409 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIyE;
+# 1658 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsInE;
+# 1658 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIoE;
+# 1670 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIfE;
+# 1745 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIdE;
+# 1820 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIeE;
+# 335 "/usr/include/c++/12.2.1/bits/char_traits.h" 3
+struct _ZSt11char_traitsIcE;
+# 56 "/usr/include/c++/12.2.1/bits/new_allocator.h" 3
+struct _ZSt15__new_allocatorIcE;
+# 64 "/usr/include/c++/12.2.1/bits/memoryfwd.h" 3
+struct _ZSaIcE;
+# 100 "/usr/include/c++/12.2.1/string_view" 3
+struct _ZSt17basic_string_viewIcSt11char_traitsIcEE;
+# 90 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+struct _ZSt16allocator_traitsISaIcEE;
+# 2222 "/usr/include/c++/12.2.1/type_traits" 3
+struct _ZSt9enable_ifILb1ESaIcEE;
+# 373 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct _ZNSt6locale5facetE;
+# 373 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct __SO__NSt6locale5facetE;
+# 524 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct _ZNSt6locale5_ImplE;
+# 62 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct _ZSt6locale;
+# 57 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+enum _ZSt13_Ios_Fmtflags {
+# 59 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt12_S_boolalpha = 1,
+# 60 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_dec,
+# 61 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt8_S_fixed = 4,
+# 62 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_hex = 8,
+# 63 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt11_S_internal = 16,
+# 64 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt7_S_left = 32,
+# 65 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_oct = 64,
+# 66 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt8_S_right = 128,
+# 67 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt13_S_scientific = 256,
+# 68 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt11_S_showbase = 512,
+# 69 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt12_S_showpoint = 1024,
+# 70 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt10_S_showpos = 2048,
+# 71 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt9_S_skipws = 4096,
+# 72 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt10_S_unitbuf = 8192,
+# 73 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt12_S_uppercase = 16384,
+# 74 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt14_S_adjustfield = 176,
+# 75 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt12_S_basefield = 74,
+# 76 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt13_S_floatfield = 260,
+# 77 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt19_S_ios_fmtflags_end = 65536,
+# 78 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt19_S_ios_fmtflags_max = 2147483647,
+# 79 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt19_S_ios_fmtflags_min = (-2147483647-1)};
+# 111 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+enum _ZSt13_Ios_Openmode {
+# 113 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_app = 1,
+# 114 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_ate,
+# 115 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_bin = 4,
+# 116 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt5_S_in = 8,
+# 117 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_out = 16,
+# 118 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt8_S_trunc = 32,
+# 119 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt12_S_noreplace = 64,
+# 120 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt19_S_ios_openmode_end = 65536,
+# 121 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt19_S_ios_openmode_max = 2147483647,
+# 122 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt19_S_ios_openmode_min = (-2147483647-1)};
+# 154 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+enum _ZSt12_Ios_Iostate {
+# 156 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt10_S_goodbit,
+# 157 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt9_S_badbit,
+# 158 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt9_S_eofbit,
+# 159 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt10_S_failbit = 4,
+# 160 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt18_S_ios_iostate_end = 65536,
+# 161 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt18_S_ios_iostate_max = 2147483647,
+# 162 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt18_S_ios_iostate_min = (-2147483647-1)};
+# 194 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+enum _ZSt12_Ios_Seekdir {
+# 196 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_beg,
+# 197 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_cur,
+# 198 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt6_S_end,
+# 199 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt18_S_ios_seekdir_end = 65536};
+# 562 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base14_Callback_listE;
+# 601 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base6_WordsE;
+# 613 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+enum _ZNSt8ios_baseUt_E {
+# 613 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZNSt8ios_base18_S_local_word_sizeE = 8};
+# 635 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base4InitE;
+# 229 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZSt8ios_base;
+# 451 "/usr/include/c++/12.2.1/bits/stl_algobase.h" 3
+struct _ZSt19istreambuf_iteratorIcSt11char_traitsIcEE;
+# 454 "/usr/include/c++/12.2.1/bits/stl_algobase.h" 3
+struct _ZSt19ostreambuf_iteratorIcSt11char_traitsIcEE;
+# 80 "/usr/include/c++/12.2.1/iosfwd" 3
+struct _ZSt15basic_streambufIcSt11char_traitsIcEE;
+# 41 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h" 3
+struct _ZSt10ctype_base;
+# 689 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+struct _ZSt5ctypeIcE;
+# 1559 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+enum _ZNSt10__num_baseUt_E {
+# 1560 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base9_S_ominusE,
+# 1561 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base8_S_oplusE,
+# 1562 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_oxE,
+# 1563 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_oXE,
+# 1564 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base10_S_odigitsE,
+# 1565 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base14_S_odigits_endE = 20,
+# 1566 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base11_S_oudigitsE = 20,
+# 1567 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base15_S_oudigits_endE = 36,
+# 1568 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_oeE = 18,
+# 1569 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_oEE = 34,
+# 1570 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base7_S_oendE = 36};
+# 1585 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+enum _ZNSt10__num_baseUt0_E {
+# 1586 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base9_S_iminusE,
+# 1587 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base8_S_iplusE,
+# 1588 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_ixE,
+# 1589 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_iXE,
+# 1590 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base8_S_izeroE,
+# 1591 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_ieE = 18,
+# 1592 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base5_S_iEE = 24,
+# 1593 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10__num_base7_S_iendE = 26};
+# 1960 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+struct _ZSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE;
+# 2318 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+struct _ZSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE;
+# 77 "/usr/include/c++/12.2.1/iosfwd" 3
+struct _ZSt9basic_iosIcSt11char_traitsIcEE;
+# 86 "/usr/include/c++/12.2.1/iosfwd" 3
+struct _ZSo;
+# 96 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+struct _ZSt19__ptr_traits_ptr_toIPccLb0EE;
+# 177 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt15iterator_traitsIPKcE;
+# 96 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+struct _ZSt19__ptr_traits_ptr_toIPKcS0_Lb0EE;
+# 98 "/usr/include/c++/12.2.1/bits/char_traits.h" 3
+struct _ZN9__gnu_cxx11char_traitsIcEE;
+# 119 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+struct _ZN9__gnu_cxx14__alloc_traitsISaIcEcE6rebindIcEE;
+# 48 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+struct _ZN9__gnu_cxx14__alloc_traitsISaIcEcEE;
+# 1043 "/usr/include/c++/12.2.1/bits/stl_iterator.h" 3
+struct _ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE;
+# 1043 "/usr/include/c++/12.2.1/bits/stl_iterator.h" 3
+struct _ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE;typedef typeof(((__builtin_va_list*)0)[0][0]) __va_list_tag_type;
+# 214 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/stddef.h" 3
+typedef unsigned long size_t;
+#include "crt/device_runtime.h"
+# 1150 "/opt/cuda/include/driver_types.h"
+typedef struct cudaArray *cudaArray_t;
+# 1162 "/opt/cuda/include/driver_types.h"
+typedef struct cudaMipmappedArray *cudaMipmappedArray_t;
+# 1513 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut_E {
+# 1514 "/opt/cuda/include/driver_types.h"
+cudaArray_t array;};
+# 1516 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut0_E {
+# 1517 "/opt/cuda/include/driver_types.h"
+cudaMipmappedArray_t mipmap;};
+# 1519 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut1_E {
+# 1520 "/opt/cuda/include/driver_types.h"
+void *devPtr;
+# 1521 "/opt/cuda/include/driver_types.h"
+struct cudaChannelFormatDesc desc;
+# 1522 "/opt/cuda/include/driver_types.h"
+size_t sizeInBytes;};
+# 1524 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut2_E {
+# 1525 "/opt/cuda/include/driver_types.h"
+void *devPtr;
+# 1526 "/opt/cuda/include/driver_types.h"
+struct cudaChannelFormatDesc desc;
+# 1527 "/opt/cuda/include/driver_types.h"
+size_t width;
+# 1528 "/opt/cuda/include/driver_types.h"
+size_t height;
+# 1529 "/opt/cuda/include/driver_types.h"
+size_t pitchInBytes;};
+# 1512 "/opt/cuda/include/driver_types.h"
+union _ZN16cudaResourceDescUt_E {
+# 1515 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut_E array;
+# 1518 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut0_E mipmap;
+# 1523 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut1_E linear;
+# 1530 "/opt/cuda/include/driver_types.h"
+struct _ZN16cudaResourceDescUt_Ut2_E pitch2D;};
+# 41 "/usr/include/bits/types/__locale_t.h" 3
+typedef struct __locale_struct *__locale_t;
+# 39 "/usr/include/bits/types.h" 3
+typedef signed short __int16_t;
+# 40 "/usr/include/bits/types.h" 3
+typedef unsigned short __uint16_t;
+# 41 "/usr/include/bits/types.h" 3
+typedef signed int __int32_t;
+# 42 "/usr/include/bits/types.h" 3
+typedef unsigned __uint32_t;
+# 160 "/usr/include/bits/types.h" 3
+typedef long __time_t;
+# 169 "/usr/include/bits/types.h" 3
+typedef int __clockid_t;
+# 197 "/usr/include/bits/types.h" 3
+typedef long __syscall_slong_t;
+# 7 "/usr/include/bits/types/clockid_t.h" 3
+typedef __clockid_t clockid_t;
+# 25 "/usr/include/bits/stdint-intn.h" 3
+typedef __int16_t int16_t;
+# 26 "/usr/include/bits/stdint-intn.h" 3
+typedef __int32_t int32_t;
+# 11 "/usr/include/bits/types/struct_timespec.h" 3
+struct timespec {
+# 16 "/usr/include/bits/types/struct_timespec.h" 3
+__time_t tv_sec;
+# 21 "/usr/include/bits/types/struct_timespec.h" 3
+__syscall_slong_t tv_nsec;};
+# 7 "/usr/include/bits/types/FILE.h" 3
+typedef struct _IO_FILE FILE;
+# 71 "/opt/cuda/include/texture_indirect_functions.h"
+typedef void _ZN15__nv_itex_traitIhE4typeE;
+# 71 "/opt/cuda/include/texture_indirect_functions.h"
+struct _Z15__nv_itex_traitIhE {};
+# 25 "/usr/include/bits/stdint-uintn.h" 3
+typedef __uint16_t uint16_t;
+# 26 "/usr/include/bits/stdint-uintn.h" 3
+typedef __uint32_t uint32_t;
+# 32 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h" 3
+typedef int _Atomic_word;
+# 322 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef unsigned char stbi_uc;
+# 323 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef unsigned short stbi_us;
+# 345 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi_io_callbacks {
+# 346 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int (*read)(void *, char *, int);
+# 347 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+void (*skip)(void *, int);
+# 348 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int (*eof)(void *);};
+# 349 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi_io_callbacks stbi_io_callbacks;
+# 547 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef uint16_t stbi__uint16;
+# 548 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef int16_t stbi__int16;
+# 549 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef uint32_t stbi__uint32;
+# 550 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef int32_t stbi__int32;
+# 44 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/mmintrin.h" 3
+typedef int __m64 __attribute((vector_size(8))) __attribute__((__may_alias__));
+# 49 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/mmintrin.h" 3
+typedef int __m64_u __attribute((vector_size(8))) __attribute__((__aligned__(1))) __attribute__((__may_alias__));
+# 41 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef long long __v2di __attribute((vector_size(16)));
+# 42 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef unsigned long long __v2du __attribute((vector_size(16)));
+# 43 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef int __v4si __attribute((vector_size(16)));
+# 44 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef unsigned __v4su __attribute((vector_size(16)));
+# 45 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef short __v8hi __attribute((vector_size(16)));
+# 46 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef unsigned short __v8hu __attribute((vector_size(16)));
+# 47 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef char __v16qi __attribute((vector_size(16)));
+# 53 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef long long __m128i __attribute((vector_size(16))) __attribute__((__may_alias__));
+# 57 "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include/emmintrin.h" 3
+typedef long long __m128i_u __attribute((vector_size(16))) __attribute__((__aligned__(1))) __attribute__((__may_alias__));
+# 692 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__context {
+# 693 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint32 img_x;
+# 693 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint32 img_y;
+# 694 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_n;
+# 694 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_out_n;
+# 696 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_io_callbacks io;
+# 697 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+void *io_user_data;
+# 699 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int read_from_callbacks;
+# 700 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int buflen;
+# 701 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc buffer_start[128];
+# 703 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *img_buffer;
+# 703 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *img_buffer_end;
+# 704 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *img_buffer_original;
+# 704 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *img_buffer_original_end;};
+# 705 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__context stbi__context;
+# 780 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__result_info {
+# 781 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int bits_per_channel;
+# 782 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int num_channels;
+# 783 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int channel_order;};
+# 784 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__result_info stbi__result_info;
+# 1690 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__huffman {
+# 1691 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc fast[512];
+# 1693 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint16 code[256];
+# 1694 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc values[256];
+# 1695 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc size[257];
+# 1696 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned maxcode[18];
+# 1697 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int delta[17];};
+# 1698 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__huffman stbi__huffman;
+# 1715 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct _ZN10stbi__jpegUt_E {
+# 1716 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int id;
+# 1717 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int h;
+# 1717 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int v;
+# 1718 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int tq;
+# 1719 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int hd;
+# 1719 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int ha;
+# 1720 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int dc_pred;
+# 1722 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int x;
+# 1722 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int y;
+# 1722 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int w2;
+# 1722 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int h2;
+# 1723 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *data;
+# 1724 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+void *raw_data;
+# 1724 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+void *raw_coeff;
+# 1725 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *linebuf;
+# 1726 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+short *coeff;
+# 1727 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int coeff_w;
+# 1727 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int coeff_h;};
+# 1701 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__jpeg {
+# 1702 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__context *s;
+# 1703 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__huffman huff_dc[4];
+# 1704 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__huffman huff_ac[4];
+# 1705 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint16 dequant[4][64];
+# 1706 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__int16 fast_ac[4][512];
+# 1709 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_h_max;
+# 1709 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_v_max;
+# 1710 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_mcu_x;
+# 1710 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_mcu_y;
+# 1711 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_mcu_w;
+# 1711 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int img_mcu_h;
+# 1728 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct _ZN10stbi__jpegUt_E img_comp[4];
+# 1730 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint32 code_buffer;
+# 1731 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int code_bits;
+# 1732 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned char marker;
+# 1733 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int nomore;
+# 1735 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int progressive;
+# 1736 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int spec_start;
+# 1737 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int spec_end;
+# 1738 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int succ_high;
+# 1739 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int succ_low;
+# 1740 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int eob_run;
+# 1741 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int jfif;
+# 1742 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int app14_color_transform;
+# 1743 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int rgb;
+# 1745 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int scan_n;
+# 1745 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int order[4];
+# 1746 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int restart_interval;
+# 1746 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int todo;
+# 1749 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+void (*idct_block_kernel)(stbi_uc *, int, short *);
+# 1750 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+void (*YCbCr_to_RGB_kernel)(stbi_uc *, const stbi_uc *, const stbi_uc *, const stbi_uc *, int, int);
+# 1751 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *(*resample_row_hv_2_kernel)(stbi_uc *, stbi_uc *, stbi_uc *, int, int);};
+# 1752 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__jpeg stbi__jpeg;
+# 3159 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef stbi_uc *(*resample_row_func)(stbi_uc *, stbi_uc *, stbi_uc *, int, int);
+# 3557 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__resample {
+# 3558 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+resample_row_func resample;
+# 3559 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *line0;
+# 3559 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *line1;
+# 3560 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int hs;
+# 3560 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int vs;
+# 3561 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int w_lores;
+# 3562 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int ystep;
+# 3563 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int ypos;char __nv_no_debug_dummy_end_padding_0[4];};
+# 3564 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__resample stbi__resample;
+# 3795 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__zhuffman {
+# 3796 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint16 fast[512];
+# 3797 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint16 firstcode[16];
+# 3798 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int maxcode[17];
+# 3799 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint16 firstsymbol[16];
+# 3800 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc size[288];
+# 3801 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint16 value[288];};
+# 3802 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__zhuffman stbi__zhuffman;
+# 3875 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__zbuf {
+# 3876 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *zbuffer;
+# 3876 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *zbuffer_end;
+# 3877 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int num_bits;
+# 3878 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint32 code_buffer;
+# 3880 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+char *zout;
+# 3881 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+char *zout_start;
+# 3882 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+char *zout_end;
+# 3883 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int z_expandable;
+# 3885 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__zhuffman z_length;
+# 3885 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__zhuffman z_distance;char __nv_no_debug_dummy_end_padding_0[4];};
+# 3886 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__zbuf stbi__zbuf;
+# 4266 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__pngchunk {
+# 4267 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint32 length;
+# 4268 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__uint32 type;};
+# 4269 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__pngchunk stbi__pngchunk;
+# 4289 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__png {
+# 4290 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__context *s;
+# 4291 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *idata;
+# 4291 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *expanded;
+# 4291 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *out;
+# 4292 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int depth;char __nv_no_debug_dummy_end_padding_0[4];};
+# 4293 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__png stbi__png;
+# 5054 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__bmp_data {
+# 5055 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int bpp;
+# 5055 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int offset;
+# 5055 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int hsz;
+# 5056 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned mr;
+# 5056 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned mg;
+# 5056 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned mb;
+# 5056 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned ma;
+# 5056 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+unsigned all_a;};
+# 5057 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__bmp_data stbi__bmp_data;
+# 5933 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__pic_packet {
+# 5934 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc size;
+# 5934 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc type;
+# 5934 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc channel;};
+# 5935 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__pic_packet stbi__pic_packet;
+# 6119 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__gif_lzw {
+# 6120 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__int16 prefix;
+# 6121 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc first;
+# 6122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc suffix;};
+# 6123 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__gif_lzw stbi__gif_lzw;
+# 6126 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+struct stbi__gif {
+# 6127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int w;
+# 6127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int h;
+# 6128 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *out;
+# 6129 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *background;
+# 6130 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *history;
+# 6131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int flags;
+# 6131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int bgindex;
+# 6131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int ratio;
+# 6131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int transparent;
+# 6131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int eflags;
+# 6132 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc pal[256][4];
+# 6133 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc lpal[256][4];
+# 6134 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi__gif_lzw codes[8192];
+# 6135 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+stbi_uc *color_table;
+# 6136 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int parse;
+# 6136 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int step;
+# 6137 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int lflags;
+# 6138 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int start_x;
+# 6138 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int start_y;
+# 6139 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int max_x;
+# 6139 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int max_y;
+# 6140 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int cur_x;
+# 6140 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int cur_y;
+# 6141 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int line_size;
+# 6142 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+int delay;char __nv_no_debug_dummy_end_padding_0[4];};
+# 6143 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image.h"
+typedef struct stbi__gif stbi__gif;
+# 178 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+typedef void stbi_write_func(void *, void *, int);
+# 259 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+struct stbi__write_context {
+# 260 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+stbi_write_func *func;
+# 261 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+void *context;};
+# 262 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+typedef struct stbi__write_context stbi__write_context;
+# 298 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/stb_image_write.h"
+typedef unsigned stbiw_uint32;
+# 232 "/usr/include/c++/12.2.1/bits/basic_string.tcc" 3
+struct _ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagE6_Guard {
+# 240 "/usr/include/c++/12.2.1/bits/basic_string.tcc" 3
+struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE *_M_guarded;};
+# 450 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+typedef struct _ZSaIcE _ZNSt16allocator_traitsISaIcEE12rebind_allocIcEE;
+# 120 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+typedef _ZNSt16allocator_traitsISaIcEE12rebind_allocIcEE _ZN9__gnu_cxx14__alloc_traitsISaIcEcE6rebindIcE5otherE;
+# 88 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef _ZN9__gnu_cxx14__alloc_traitsISaIcEcE6rebindIcE5otherE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_Char_alloc_typeE;
+# 125 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_Char_alloc_typeE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14allocator_typeE;
+# 298 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h" 3
+typedef unsigned long _ZSt6size_t;
+# 435 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+typedef _ZSt6size_t _ZNSt16allocator_traitsISaIcEE9size_typeE;
+# 59 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+typedef _ZNSt16allocator_traitsISaIcEE9size_typeE _ZN9__gnu_cxx14__alloc_traitsISaIcEcE9size_typeE;
+# 126 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef _ZN9__gnu_cxx14__alloc_traitsISaIcEcE9size_typeE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9size_typeE;
+# 420 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+typedef char *_ZNSt16allocator_traitsISaIcEE7pointerE;
+# 57 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+typedef _ZNSt16allocator_traitsISaIcEE7pointerE _ZN9__gnu_cxx14__alloc_traitsISaIcEcE7pointerE;
+# 130 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef _ZN9__gnu_cxx14__alloc_traitsISaIcEcE7pointerE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7pointerE;
+# 423 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+typedef const char *_ZNSt16allocator_traitsISaIcEE13const_pointerE;
+# 58 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+typedef _ZNSt16allocator_traitsISaIcEE13const_pointerE _ZN9__gnu_cxx14__alloc_traitsISaIcEcE13const_pointerE;
+# 131 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef _ZN9__gnu_cxx14__alloc_traitsISaIcEcE13const_pointerE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13const_pointerE;
+# 132 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef struct _ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE8iteratorE;
+# 134 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef struct _ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14const_iteratorE;
+# 152 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+typedef struct _ZSt17basic_string_viewIcSt11char_traitsIcEE _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9__sv_typeE;
+# 192 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderE {
+# 207 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7pointerE _M_p;};
+# 216 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+union __C10 {
+# 217 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+char _M_local_buf[16];
+# 218 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9size_typeE _M_allocated_capacity;};
+# 72 "/usr/include/c++/12.2.1/bits/stringfwd.h" 3
+struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE {
+# 210 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderE _M_dataplus;
+# 211 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9size_typeE _M_string_length;
+# 215 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+# 216 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+union  {
+# 217 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+char _M_local_buf[16];
+# 218 "/usr/include/c++/12.2.1/bits/basic_string.h" 3
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9size_typeE _M_allocated_capacity;};};
+# 299 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h" 3
+typedef long _ZSt9ptrdiff_t;
+# 302 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h" 3
+typedef void *_ZSt9nullptr_t;
+# 73 "/usr/include/c++/12.2.1/bits/cpp_type_traits.h" 3
+struct _ZSt11__true_type {};
+# 74 "/usr/include/c++/12.2.1/bits/cpp_type_traits.h" 3
+struct _ZSt12__false_type {};
+# 535 "/usr/include/c++/12.2.1/bits/cpp_type_traits.h" 3
+struct _ZSt24__is_memcmp_ordered_withISt4byteS0_Lb1EE {};
+# 193 "/usr/include/c++/12.2.1/bits/utility.h" 3
+struct _ZSt10in_place_t {};
+# 80 "/usr/include/c++/12.2.1/bits/stl_pair.h" 3
+struct _ZSt21piecewise_construct_t {};
+# 93 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt18input_iterator_tag {};
+# 99 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt20forward_iterator_tag {};
+# 103 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt26bidirectional_iterator_tag {};
+# 107 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt26random_access_iterator_tag {};
+# 202 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt21__numeric_limits_base {};
+# 384 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIbE {};
+# 453 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIcE {};
+# 520 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIaE {};
+# 590 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIhE {};
+# 663 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIwE {};
+# 797 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIDsE {};
+# 858 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIDiE {};
+# 920 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIsE {};
+# 987 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsItE {};
+# 1060 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIiE {};
+# 1127 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIjE {};
+# 1199 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIlE {};
+# 1266 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsImE {};
+# 1339 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIxE {};
+# 1409 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIyE {};
+# 1658 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsInE {};
+# 1658 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIoE {};
+# 1670 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIfE {};
+# 1745 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIdE {};
+# 1820 "/usr/include/c++/12.2.1/limits" 3
+struct _ZSt14numeric_limitsIeE {};
+# 77 "/usr/include/c++/12.2.1/bits/stringfwd.h" 3
+typedef struct _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE _ZSt6string;
+# 68 "/usr/include/c++/12.2.1/bits/postypes.h" 3
+typedef _ZSt9ptrdiff_t _ZSt10streamsize;
+# 141 "/usr/include/c++/12.2.1/iosfwd" 3
+typedef struct _ZSo _ZSt7ostream;
+# 337 "/usr/include/c++/12.2.1/bits/char_traits.h" 3
+typedef char _ZNSt11char_traitsIcE9char_typeE;
+# 335 "/usr/include/c++/12.2.1/bits/char_traits.h" 3
+struct _ZSt11char_traitsIcE {};
+# 62 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++locale.h" 3
+typedef __locale_t _ZSt10__c_locale;
+# 47 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h" 3
+typedef struct _ZSt15__new_allocatorIcE _ZSt16__allocator_baseIcE;
+# 60 "/usr/include/c++/12.2.1/bits/new_allocator.h" 3
+typedef _ZSt6size_t _ZNSt15__new_allocatorIcE9size_typeE;
+# 56 "/usr/include/c++/12.2.1/bits/new_allocator.h" 3
+struct _ZSt15__new_allocatorIcE {};
+# 127 "/usr/include/c++/12.2.1/bits/allocator.h" 3
+typedef char _ZNSaIcE10value_typeE;
+# 64 "/usr/include/c++/12.2.1/bits/memoryfwd.h" 3
+struct _ZSaIcE {};
+# 414 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+typedef struct _ZSaIcE _ZNSt16allocator_traitsISaIcEE14allocator_typeE;
+# 90 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+struct _ZSt16allocator_traitsISaIcEE {};
+# 2228 "/usr/include/c++/12.2.1/type_traits" 3
+typedef struct _ZSaIcE _ZNSt9enable_ifILb1ESaIcEE4typeE;
+# 2222 "/usr/include/c++/12.2.1/type_traits" 3
+struct _ZSt9enable_ifILb1ESaIcEE {};
+# 807 "/usr/include/c++/12.2.1/bits/alloc_traits.h" 3
+typedef _ZNSt9enable_ifILb1ESaIcEE4typeE _ZSt17_RequireAllocatorISaIcEE;
+# 373 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct _ZNSt6locale5facetE { const long *__vptr;
+# 379 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+_Atomic_word _M_refcount;char __nv_no_debug_dummy_end_padding_0[4];};
+# 373 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct __SO__NSt6locale5facetE { const long *__vptr;
+# 379 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+_Atomic_word _M_refcount;};
+# 62 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct _ZSt6locale {
+# 311 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+struct _ZNSt6locale5_ImplE *_M_impl;};
+# 342 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+typedef enum _ZSt13_Ios_Fmtflags _ZNSt8ios_base8fmtflagsE;
+# 417 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+typedef enum _ZSt12_Ios_Iostate _ZNSt8ios_base7iostateE;
+# 488 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+typedef enum _ZSt12_Ios_Seekdir _ZNSt8ios_base7seekdirE;
+# 601 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base6_WordsE {
+# 603 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+void *_M_pword;
+# 604 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+long _M_iword;};
+# 635 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base4InitE {};
+# 229 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZSt8ios_base { const long *__vptr;
+# 554 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt10streamsize _M_precision;
+# 555 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZSt10streamsize _M_width;
+# 556 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZNSt8ios_base8fmtflagsE _M_flags;
+# 557 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZNSt8ios_base7iostateE _M_exception;
+# 558 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+_ZNSt8ios_base7iostateE _M_streambuf_state;
+# 592 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base14_Callback_listE *_M_callbacks;
+# 609 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base6_WordsE _M_word_zero;
+# 614 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base6_WordsE _M_local_word[8];
+# 617 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+int _M_word_size;
+# 618 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZNSt8ios_base6_WordsE *_M_word;
+# 624 "/usr/include/c++/12.2.1/bits/ios_base.h" 3
+struct _ZSt6locale _M_ios_locale;};
+# 131 "/usr/include/c++/12.2.1/streambuf" 3
+typedef char _ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE;
+# 132 "/usr/include/c++/12.2.1/streambuf" 3
+typedef struct _ZSt11char_traitsIcE _ZNSt15basic_streambufIcSt11char_traitsIcEE11traits_typeE;
+# 80 "/usr/include/c++/12.2.1/iosfwd" 3
+struct _ZSt15basic_streambufIcSt11char_traitsIcEE { const long *__vptr;
+# 189 "/usr/include/c++/12.2.1/streambuf" 3
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE *_M_in_beg;
+# 190 "/usr/include/c++/12.2.1/streambuf" 3
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE *_M_in_cur;
+# 191 "/usr/include/c++/12.2.1/streambuf" 3
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE *_M_in_end;
+# 192 "/usr/include/c++/12.2.1/streambuf" 3
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE *_M_out_beg;
+# 193 "/usr/include/c++/12.2.1/streambuf" 3
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE *_M_out_cur;
+# 194 "/usr/include/c++/12.2.1/streambuf" 3
+_ZNSt15basic_streambufIcSt11char_traitsIcEE9char_typeE *_M_out_end;
+# 197 "/usr/include/c++/12.2.1/streambuf" 3
+struct _ZSt6locale _M_buf_locale;};
+# 44 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h" 3
+typedef const int *_ZNSt10ctype_base9__to_typeE;
+# 48 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h" 3
+typedef unsigned short _ZNSt10ctype_base4maskE;
+# 41 "/usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h" 3
+struct _ZSt10ctype_base {};
+# 694 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+typedef char _ZNSt5ctypeIcE9char_typeE;
+# 689 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+struct _ZSt5ctypeIcE {  const long *__b_NSt6locale5facetE___vptr;
+# 379 "/usr/include/c++/12.2.1/bits/locale_classes.h" 3
+_Atomic_word __b_NSt6locale5facetE__M_refcount;
+# 698 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZSt10__c_locale _M_c_locale_ctype;
+# 699 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+__nv_bool _M_del;
+# 700 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10ctype_base9__to_typeE _M_toupper;
+# 701 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+_ZNSt10ctype_base9__to_typeE _M_tolower;
+# 702 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+const _ZNSt10ctype_base4maskE *_M_table;
+# 703 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+char _M_widen_ok;
+# 704 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+char _M_widen[256];
+# 705 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+char _M_narrow[256];
+# 706 "/usr/include/c++/12.2.1/bits/locale_facets.h" 3
+char _M_narrow_ok;char __nv_no_debug_dummy_end_padding_0[6];};
+# 76 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+typedef char _ZNSt9basic_iosIcSt11char_traitsIcEE9char_typeE;
+# 87 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+typedef struct _ZSt5ctypeIcE _ZNSt9basic_iosIcSt11char_traitsIcEE12__ctype_typeE;
+# 89 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+typedef struct _ZSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE _ZNSt9basic_iosIcSt11char_traitsIcEE14__num_put_typeE;
+# 91 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+typedef struct _ZSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE _ZNSt9basic_iosIcSt11char_traitsIcEE14__num_get_typeE;
+# 77 "/usr/include/c++/12.2.1/iosfwd" 3
+struct _ZSt9basic_iosIcSt11char_traitsIcEE { struct _ZSt8ios_base __b_St8ios_base;
+# 96 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+struct _ZSo *_M_tie;
+# 97 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+_ZNSt9basic_iosIcSt11char_traitsIcEE9char_typeE _M_fill;
+# 98 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+__nv_bool _M_fill_init;
+# 99 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+struct _ZSt15basic_streambufIcSt11char_traitsIcEE *_M_streambuf;
+# 102 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+const _ZNSt9basic_iosIcSt11char_traitsIcEE12__ctype_typeE *_M_ctype;
+# 104 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+const _ZNSt9basic_iosIcSt11char_traitsIcEE14__num_put_typeE *_M_num_put;
+# 106 "/usr/include/c++/12.2.1/bits/basic_ios.h" 3
+const _ZNSt9basic_iosIcSt11char_traitsIcEE14__num_get_typeE *_M_num_get;};
+# 62 "/usr/include/c++/12.2.1/ostream" 3
+typedef char _ZNSo9char_typeE;
+# 71 "/usr/include/c++/12.2.1/ostream" 3
+typedef struct _ZSo _ZNSo14__ostream_typeE;
+# 86 "/usr/include/c++/12.2.1/iosfwd" 3
+struct _ZSo { const long *__vptr; struct _ZSt9basic_iosIcSt11char_traitsIcEE __v_St9basic_iosIcSt11char_traitsIcEE;};
+# 126 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+typedef char *_ZNSt19__ptr_traits_ptr_toIPccLb0EE7pointerE;
+# 127 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+typedef char _ZNSt19__ptr_traits_ptr_toIPccLb0EE12element_typeE;
+# 96 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+struct _ZSt19__ptr_traits_ptr_toIPccLb0EE {};
+# 223 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+typedef struct _ZSt26random_access_iterator_tag _ZNSt15iterator_traitsIPKcE17iterator_categoryE;
+# 225 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+typedef _ZSt9ptrdiff_t _ZNSt15iterator_traitsIPKcE15difference_typeE;
+# 177 "/usr/include/c++/12.2.1/bits/stl_iterator_base_types.h" 3
+struct _ZSt15iterator_traitsIPKcE {};
+# 126 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+typedef const char *_ZNSt19__ptr_traits_ptr_toIPKcS0_Lb0EE7pointerE;
+# 127 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+typedef const char _ZNSt19__ptr_traits_ptr_toIPKcS0_Lb0EE12element_typeE;
+# 96 "/usr/include/c++/12.2.1/bits/ptr_traits.h" 3
+struct _ZSt19__ptr_traits_ptr_toIPKcS0_Lb0EE {};
+# 100 "/usr/include/c++/12.2.1/bits/char_traits.h" 3
+typedef _ZNSt11char_traitsIcE9char_typeE _ZN9__gnu_cxx11char_traitsIcE9char_typeE;
+# 98 "/usr/include/c++/12.2.1/bits/char_traits.h" 3
+struct _ZN9__gnu_cxx11char_traitsIcEE {};
+# 119 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+struct _ZN9__gnu_cxx14__alloc_traitsISaIcEcE6rebindIcEE {};
+# 48 "/usr/include/c++/12.2.1/ext/alloc_traits.h" 3
+struct _ZN9__gnu_cxx14__alloc_traitsISaIcEcEE {};
+# 1043 "/usr/include/c++/12.2.1/bits/stl_iterator.h" 3
+struct _ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE {
+# 1046 "/usr/include/c++/12.2.1/bits/stl_iterator.h" 3
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13const_pointerE _M_current;};
+# 130 "/opt/cuda/include/crt/common_functions.h"
+___device__(extern  __no_sc__) __attribute__((__externally_visible__)) __attribute__((__nothrow__)) __attribute__((visibility("default"))) void _ZdlPvm(void *, _ZSt6size_t);
+# 281 "/opt/cuda/include/crt/common_functions.h"
+___device__(extern  __no_sc__) __attribute__((__externally_visible__)) __attribute__((__nothrow__)) __attribute__((visibility("default"))) void _ZdlPvmSt11align_val_t(void *, _ZSt6size_t, unsigned long);
+# 157 "/opt/cuda/include/crt/common_functions.h"
+___device__(extern  __no_sc__) __attribute__((__alloc_size__(1))) __attribute__((__malloc__)) __attribute__((__nothrow__)) void *malloc(size_t);
+# 158 "/opt/cuda/include/crt/common_functions.h"
+___device__(extern  __no_sc__) __attribute__((__nothrow__)) void free(void *);
+#if !defined(__CUDABE__)
+# 219 "/opt/cuda/include/crt/math_functions.h"
+ __device_builtin__ ___device__(extern  __no_sc__) __attribute__((__nothrow__)) __attribute__((__const__)) int abs(int);
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+# 109 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ enum cudaError __cudaCDP2Malloc(void **, size_t);
+# 256 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(extern  __no_sc__) enum cudaError __cudaCDP2Free(void *);
+# 463 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ enum cudaError _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0028cudaFreeEPv(void *);
+# 468 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ enum cudaError _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e00210cudaMallocEPPvm(void **, size_t);
+#if !defined(__CUDABE__)
+# 97 "/opt/cuda/include/crt/common_functions.h"
+ __device_builtin__ ___device__(extern  __no_sc__) __attribute__((__nothrow__)) void *memcpy(void *__restrict__, const void *__restrict__, size_t);
+#endif
+#if !defined(__CUDABE__)
+# 96 "/opt/cuda/include/crt/common_functions.h"
+ __device_builtin__ ___device__(extern  __no_sc__) __attribute__((__nothrow__)) void *memset(void *, int, size_t);
+#endif
+#if !defined(__CUDABE__)
+# 153 "/opt/cuda/include/crt/common_functions.h"
+ __device_builtin__ ___device__(extern  __no_sc__) int printf(const char *__restrict__, ...);
+#endif
+# 205 "/opt/cuda/include/crt/common_functions.h"
+___device__(extern  __no_sc__) __attribute__((__nothrow__)) __attribute__((__noreturn__)) void __assert_fail(const char *, const char *, unsigned, const char *);
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+# 169 "/opt/cuda/include/crt/device_functions.h"
+ __device_builtin__ ___device__(extern  __no_sc__) void __syncthreads(void);
+#endif
+# 3634 "/opt/cuda/include/crt/device_functions.h"
+___device__(extern  __no_sc__) unsigned __cudaPushCallConfiguration(struct dim3, struct dim3, size_t, struct CUstream_st *);
+# 145 "/opt/cuda/include/texture_indirect_functions.h"
+___device__(static  __no_sc__) unsigned char _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0025tex2DIhEET_yff(unsigned long long, float, float);
+# 139 "/opt/cuda/include/texture_indirect_functions.h"
+___device__(static  __no_sc__) _ZN15__nv_itex_traitIhE4typeE _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0025tex2DIhEEN15__nv_itex_traitIT_E4typeEPS2_yff(unsigned char *, unsigned long long, float, float);
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__global__ __var_used__ extern void _Z4gpu1PKhPKfPhiiiii(const unsigned char *, const float *, unsigned char *, int, int, int, int, int);
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__global__ __var_used__ extern void _Z4gpu2PKhPhiiiii(const unsigned char *, unsigned char *, int, int, int, int, int);
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__global__ __var_used__ extern void _Z7gpu_texyPhiiiii(unsigned long long, unsigned char *, int, int, int, int, int);
+# 423 "/opt/cuda/include/vector_types.h"
+___device__(static  __no_sc__) __inline__ void _ZN4dim3C1Ejjj(struct dim3 *const, unsigned, unsigned, unsigned);
+___device__(static  __no_sc__) __inline__ void _ZN4dim3C2Ejjj(struct dim3 *const, unsigned, unsigned, unsigned);
+# 300 "/usr/include/c++/12.2.1/cmath" 3
+___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt5frexpfPi(float, int *);
+# 319 "/usr/include/c++/12.2.1/cmath" 3
+___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt5ldexpfi(float, int);
+# 388 "/usr/include/c++/12.2.1/cmath" 3
+___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt3powff(float, float);
+# 19 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+static  __constant__  __var_used__ float imageKernel_c[9];
+# 88 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+static  __shared__  __var_used__ unsigned char _ZZ4gpu2PKhPhiiiiiE4tile[32][32][1];
+#include "common_functions.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+# 109 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ enum cudaError __cudaCDP2Malloc(
+# 109 "/opt/cuda/include/cuda_device_runtime_api.h"
+void **p, 
+# 109 "/opt/cuda/include/cuda_device_runtime_api.h"
+size_t s){
+# 110 "/opt/cuda/include/cuda_device_runtime_api.h"
+{
+# 111 "/opt/cuda/include/cuda_device_runtime_api.h"
+return cudaErrorUnknown;
+# 112 "/opt/cuda/include/cuda_device_runtime_api.h"
+}}
+# 463 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ enum cudaError _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0028cudaFreeEPv(
+# 463 "/opt/cuda/include/cuda_device_runtime_api.h"
+void *devPtr){
+# 464 "/opt/cuda/include/cuda_device_runtime_api.h"
+{
+# 465 "/opt/cuda/include/cuda_device_runtime_api.h"
+return __cudaCDP2Free(devPtr);
+# 466 "/opt/cuda/include/cuda_device_runtime_api.h"
+}}
+# 468 "/opt/cuda/include/cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ enum cudaError _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e00210cudaMallocEPPvm(
+# 468 "/opt/cuda/include/cuda_device_runtime_api.h"
+void **devPtr, 
+# 468 "/opt/cuda/include/cuda_device_runtime_api.h"
+size_t size){
+# 469 "/opt/cuda/include/cuda_device_runtime_api.h"
+{  void **__T23;
+ size_t __T24;
+# 470 "/opt/cuda/include/cuda_device_runtime_api.h"
+return ((__T23 = devPtr) , (void)(__T24 = size)) , (__cudaCDP2Malloc(__T23, __T24));
+# 471 "/opt/cuda/include/cuda_device_runtime_api.h"
+}}
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+# 145 "/opt/cuda/include/texture_indirect_functions.h"
+___device__(static  __no_sc__) unsigned char _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0025tex2DIhEET_yff(
+# 145 "/opt/cuda/include/texture_indirect_functions.h"
+unsigned long long texObject, 
+# 145 "/opt/cuda/include/texture_indirect_functions.h"
+float x, 
+# 145 "/opt/cuda/include/texture_indirect_functions.h"
+float y){
+# 146 "/opt/cuda/include/texture_indirect_functions.h"
+{  unsigned long long __T25;
+ float __T26;
+ float __T27;
+# 147 "/opt/cuda/include/texture_indirect_functions.h"
+ unsigned char __cuda_local_var_32726_5_non_const_ret;
+# 148 "/opt/cuda/include/texture_indirect_functions.h"
+(((__T25 = texObject) , (void)(__T26 = x)) , (void)(__T27 = y)) , (void)(_ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0025tex2DIhEEN15__nv_itex_traitIT_E4typeEPS2_yff((&__cuda_local_var_32726_5_non_const_ret), __T25, __T26, __T27));
+# 149 "/opt/cuda/include/texture_indirect_functions.h"
+return __cuda_local_var_32726_5_non_const_ret;
+# 150 "/opt/cuda/include/texture_indirect_functions.h"
+}}
+# 139 "/opt/cuda/include/texture_indirect_functions.h"
+___device__(static  __no_sc__) _ZN15__nv_itex_traitIhE4typeE _ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0025tex2DIhEEN15__nv_itex_traitIT_E4typeEPS2_yff(
+# 139 "/opt/cuda/include/texture_indirect_functions.h"
+unsigned char *ptr, 
+# 139 "/opt/cuda/include/texture_indirect_functions.h"
+unsigned long long obj, 
+# 139 "/opt/cuda/include/texture_indirect_functions.h"
+float x, 
+# 139 "/opt/cuda/include/texture_indirect_functions.h"
+float y){
+# 140 "/opt/cuda/include/texture_indirect_functions.h"
+{  unsigned char *__T28;
+ unsigned long long __T29;
+ float __T30;
+ float __T31;
+# 141 "/opt/cuda/include/texture_indirect_functions.h"
+((((__T28 = ptr) , (void)(__T29 = obj)) , (void)(__T30 = x)) , (void)(__T31 = y)) , (void)(__nv_tex_surf_handler(((const char *)("__itex2D")), __T28, __T29, __T30, __T31)); 
+# 142 "/opt/cuda/include/texture_indirect_functions.h"
+}}
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__global__ __var_used__ void _Z4gpu1PKhPKfPhiiiii(
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+const unsigned char *InputImageData, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+const float *kernel, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+unsigned char *outputImageData, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int kernelSizeX, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int kernelSizeY, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int dataSizeX, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int dataSizeY, 
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int channels){
+# 59 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 60 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68597_6_non_const_j;
+# 61 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68598_6_non_const_i;
+# 60 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68597_6_non_const_j = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
+# 61 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68598_6_non_const_i = ((int)(((blockIdx.y) * (blockDim.y)) + (threadIdx.y)));
+# 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+if ((__cuda_local_var_68598_6_non_const_i < dataSizeY) && (__cuda_local_var_68597_6_non_const_j < dataSizeX))
+# 62 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 63 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68600_7_non_const_kCenterX;
+# 63 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68600_35_non_const_kCenterY;
+# 63 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68600_7_non_const_kCenterX = (kernelSizeX / 2);
+# 63 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68600_35_non_const_kCenterY = (kernelSizeY / 2);
+# 64 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 64 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int k;
+# 64 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+k = 0;
+# 64 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (k < channels); ++k)
+# 64 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 65 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ float __cuda_local_var_68602_10_non_const_sum;
+# 65 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68602_10_non_const_sum = (0.0F);
+# 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int m;
+# 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+m = 0;
+# 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (m < kernelSizeY); ++m)
+# 66 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 67 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68604_9_non_const_mm;
+# 67 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68604_9_non_const_mm = ((kernelSizeY - 1) - m);
+# 68 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 68 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int n;
+# 68 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+n = 0;
+# 68 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (n < kernelSizeX); ++n)
+# 68 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 69 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68606_10_non_const_nn;
+# 70 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68607_10_non_const_yIndex;
+# 71 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68608_10_non_const_xIndex;
+# 69 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68606_10_non_const_nn = ((kernelSizeX - 1) - n);
+# 70 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68607_10_non_const_yIndex = ((__cuda_local_var_68598_6_non_const_i + m) - __cuda_local_var_68600_35_non_const_kCenterY);
+# 71 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68608_10_non_const_xIndex = ((__cuda_local_var_68597_6_non_const_j + n) - __cuda_local_var_68600_7_non_const_kCenterX);
+# 72 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+if ((((__cuda_local_var_68607_10_non_const_yIndex >= 0) && (__cuda_local_var_68607_10_non_const_yIndex < dataSizeY)) && (__cuda_local_var_68608_10_non_const_xIndex >= 0)) && (__cuda_local_var_68608_10_non_const_xIndex < dataSizeX))
+# 72 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 73 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68602_10_non_const_sum += (((float)(InputImageData[((((__cuda_local_var_68607_10_non_const_yIndex * dataSizeX) + __cuda_local_var_68608_10_non_const_xIndex) * channels) + k)])) * (kernel[((kernelSizeX * __cuda_local_var_68604_9_non_const_mm) + __cuda_local_var_68606_10_non_const_nn)]));
+# 74 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}
+# 75 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 76 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 77 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+(outputImageData[((((__cuda_local_var_68598_6_non_const_i * dataSizeX) + __cuda_local_var_68597_6_non_const_j) * channels) + k)]) = ((unsigned char)__cuda_local_var_68602_10_non_const_sum);
+# 78 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 79 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} 
+# 80 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}}
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__global__ __var_used__ void _Z4gpu2PKhPhiiiii(
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+const unsigned char *InputImageData, 
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+unsigned char *outputImageData, 
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int kernelSizeX, 
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int kernelSizeY, 
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int dataSizeX, 
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int dataSizeY, 
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int channels){
+# 82 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 83 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68620_7_non_const_j;
+# 84 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68621_6_non_const_i;
+# 85 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68622_7_non_const_tx;
+# 86 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68623_7_non_const_ty;
+# 87 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68624_7_non_const_kCenterX;
+# 87 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68624_35_non_const_kCenterY;
+# 83 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68620_7_non_const_j = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
+# 84 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68621_6_non_const_i = ((int)(((blockIdx.y) * (blockDim.y)) + (threadIdx.y)));
+# 85 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68622_7_non_const_tx = ((int)(threadIdx.x));
+# 86 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68623_7_non_const_ty = ((int)(threadIdx.y));
+# 87 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68624_7_non_const_kCenterX = (kernelSizeX / 2);
+# 87 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68624_35_non_const_kCenterY = (kernelSizeY / 2);
+# 89 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 89 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int k;
+# 89 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+k = 0;
+# 89 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (k < channels); ++k)
+# 89 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 90 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 90 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int m;
+# 90 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+m = 0;
+# 90 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (m < kernelSizeY); ++m)
+# 90 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 91 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 91 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int n;
+# 91 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+n = 0;
+# 91 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (n < kernelSizeX); ++n)
+# 91 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 92 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68629_13_non_const_yIndex;
+# 93 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68630_13_non_const_xIndex;
+# 92 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68629_13_non_const_yIndex = ((__cuda_local_var_68621_6_non_const_i + m) - __cuda_local_var_68624_35_non_const_kCenterY);
+# 93 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68630_13_non_const_xIndex = ((__cuda_local_var_68620_7_non_const_j + n) - __cuda_local_var_68624_7_non_const_kCenterX);
+# 94 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+if ((((__cuda_local_var_68629_13_non_const_yIndex >= 0) && (__cuda_local_var_68629_13_non_const_yIndex < dataSizeY)) && (__cuda_local_var_68630_13_non_const_xIndex >= 0)) && (__cuda_local_var_68630_13_non_const_xIndex < dataSizeX))
+# 94 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 95 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+((((((_ZZ4gpu2PKhPhiiiiiE4tile)[(__cuda_local_var_68623_7_non_const_ty + m)]))[(__cuda_local_var_68622_7_non_const_tx + n)]))[k]) = (InputImageData[((((__cuda_local_var_68629_13_non_const_yIndex * dataSizeX) + __cuda_local_var_68630_13_non_const_xIndex) * channels) + k)]);
+# 96 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}
+# 96 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+else 
+# 96 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 97 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+((((((_ZZ4gpu2PKhPhiiiiiE4tile)[(__cuda_local_var_68623_7_non_const_ty + m)]))[(__cuda_local_var_68622_7_non_const_tx + n)]))[k]) = ((unsigned char)0U);
+# 98 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}
+# 99 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 100 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 101 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 102 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__syncthreads();
+# 103 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 103 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int k;
+# 103 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+k = 0;
+# 103 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (k < channels); ++k)
+# 103 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 104 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ float __cuda_local_var_68641_11_non_const_sum;
+# 104 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68641_11_non_const_sum = (0.0F);
+# 105 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 105 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int m;
+# 105 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+m = 0;
+# 105 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (m < kernelSizeY); ++m)
+# 105 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 106 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68643_11_non_const_mm;
+# 106 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68643_11_non_const_mm = ((kernelSizeY - 1) - m);
+# 107 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 107 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int n;
+# 107 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+n = 0;
+# 107 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (n < kernelSizeX); ++n)
+# 107 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 108 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68645_13_non_const_nn;
+# 109 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68646_13_non_const_yIndex;
+# 110 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68647_13_non_const_xIndex;
+# 108 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68645_13_non_const_nn = ((kernelSizeX - 1) - n);
+# 109 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68646_13_non_const_yIndex = ((__cuda_local_var_68621_6_non_const_i + m) - __cuda_local_var_68624_35_non_const_kCenterY);
+# 110 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68647_13_non_const_xIndex = ((__cuda_local_var_68620_7_non_const_j + n) - __cuda_local_var_68624_7_non_const_kCenterX);
+# 111 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+if ((((__cuda_local_var_68646_13_non_const_yIndex >= 0) && (__cuda_local_var_68646_13_non_const_yIndex < dataSizeY)) && (__cuda_local_var_68647_13_non_const_xIndex >= 0)) && (__cuda_local_var_68647_13_non_const_xIndex < dataSizeX))
+# 111 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 112 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68641_11_non_const_sum += (((float)((((((_ZZ4gpu2PKhPhiiiiiE4tile)[(__cuda_local_var_68623_7_non_const_ty + m)]))[(__cuda_local_var_68622_7_non_const_tx + n)]))[k])) * ((imageKernel_c)[((kernelSizeX * __cuda_local_var_68643_11_non_const_mm) + __cuda_local_var_68645_13_non_const_nn)]));
+# 113 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}
+# 114 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 115 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 116 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+(outputImageData[((((__cuda_local_var_68621_6_non_const_i * dataSizeX) + __cuda_local_var_68620_7_non_const_j) * channels) + k)]) = ((unsigned char)__cuda_local_var_68641_11_non_const_sum);
+# 117 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} } 
+# 118 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}}
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__global__ __var_used__ void _Z7gpu_texyPhiiiii(
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+unsigned long long imageKernel_texture, 
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+unsigned char *outputImageData, 
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int kernelSizeX, 
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int kernelSizeY, 
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int dataSizeX, 
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int dataSizeY, 
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+int channels){
+# 122 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 123 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68660_7_non_const_j;
+# 124 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68661_6_non_const_i;
+# 123 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68660_7_non_const_j = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
+# 124 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68661_6_non_const_i = ((int)(((blockIdx.y) * (blockDim.y)) + (threadIdx.y)));
+# 125 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+if ((__cuda_local_var_68661_6_non_const_i < dataSizeY) && (__cuda_local_var_68660_7_non_const_j < dataSizeX))
+# 125 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 126 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68663_7_non_const_kCenterX;
+# 126 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68663_35_non_const_kCenterY;
+# 126 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68663_7_non_const_kCenterX = (kernelSizeX / 2);
+# 126 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68663_35_non_const_kCenterY = (kernelSizeY / 2);
+# 127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int k;
+# 127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+k = 0;
+# 127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (k < channels); ++k)
+# 127 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 128 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ float __cuda_local_var_68665_10_non_const_sum;
+# 128 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68665_10_non_const_sum = (0.0F);
+# 129 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 129 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int m;
+# 129 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+m = 0;
+# 129 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (m < kernelSizeY); ++m)
+# 129 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 130 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68667_9_non_const_mm;
+# 130 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68667_9_non_const_mm = ((kernelSizeY - 1) - m);
+# 131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int n;
+# 131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+n = 0;
+# 131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+for (; (n < kernelSizeX); ++n)
+# 131 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{
+# 132 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68669_10_non_const_nn;
+# 133 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68670_10_non_const_yIndex;
+# 134 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+ int __cuda_local_var_68671_10_non_const_xIndex;
+# 132 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68669_10_non_const_nn = ((kernelSizeX - 1) - n);
+# 133 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68670_10_non_const_yIndex = ((__cuda_local_var_68661_6_non_const_i + m) - __cuda_local_var_68663_35_non_const_kCenterY);
+# 134 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68671_10_non_const_xIndex = ((__cuda_local_var_68660_7_non_const_j + n) - __cuda_local_var_68663_7_non_const_kCenterX);
+# 135 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+if ((((__cuda_local_var_68670_10_non_const_yIndex >= 0) && (__cuda_local_var_68670_10_non_const_yIndex < dataSizeY)) && (__cuda_local_var_68671_10_non_const_xIndex >= 0)) && (__cuda_local_var_68671_10_non_const_xIndex < dataSizeX))
+# 135 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+{  unsigned long long __T32;
+ float __T33;
+ float __T34;
+# 136 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+__cuda_local_var_68665_10_non_const_sum += (((float)((((__T32 = imageKernel_texture) , (void)(__T33 = ((float)__cuda_local_var_68671_10_non_const_xIndex))) , (void)(__T34 = ((float)__cuda_local_var_68670_10_non_const_yIndex))) , (_ZN37_INTERNAL_7c504d13_7_main_cu_1b34e0025tex2DIhEET_yff(__T32, __T33, __T34)))) * ((imageKernel_c)[((kernelSizeX * __cuda_local_var_68667_9_non_const_mm) + __cuda_local_var_68669_10_non_const_nn)]));
+# 137 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}
+# 138 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 139 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 140 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+(outputImageData[((((__cuda_local_var_68661_6_non_const_i * dataSizeX) + __cuda_local_var_68660_7_non_const_j) * channels) + k)]) = ((unsigned char)__cuda_local_var_68665_10_non_const_sum);
+# 141 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} }
+# 142 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+} 
+# 143 "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/CSE560-Lab/Assignment 2/src/main.cu"
+}}
+__asm__(".align 2");
+# 423 "/opt/cuda/include/vector_types.h"
+___device__(static  __no_sc__) __inline__ void _ZN4dim3C1Ejjj( struct dim3 *const this, 
+# 423 "/opt/cuda/include/vector_types.h"
+unsigned vx, 
+# 423 "/opt/cuda/include/vector_types.h"
+unsigned vy, 
+# 423 "/opt/cuda/include/vector_types.h"
+unsigned vz){
+# 423 "/opt/cuda/include/vector_types.h"
+{
+# 423 "/opt/cuda/include/vector_types.h"
+(this->x) = vx;
+# 423 "/opt/cuda/include/vector_types.h"
+(this->y) = vy;
+# 423 "/opt/cuda/include/vector_types.h"
+(this->z) = vz; 
+# 423 "/opt/cuda/include/vector_types.h"
+}}
+__asm__(".align 2");
+___device__(static  __no_sc__) __inline__ void _ZN4dim3C2Ejjj( struct dim3 *const this,  unsigned __T35,  unsigned __T36,  unsigned __T37){ {  _ZN4dim3C1Ejjj(this, __T35, __T36, __T37);  }}
+# 300 "/usr/include/c++/12.2.1/cmath" 3
+___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt5frexpfPi(
+# 300 "/usr/include/c++/12.2.1/cmath" 3
+float __x, 
+# 300 "/usr/include/c++/12.2.1/cmath" 3
+int *__exp){
+# 301 "/usr/include/c++/12.2.1/cmath" 3
+{  float __T38;
+ int *__T39;
+# 301 "/usr/include/c++/12.2.1/cmath" 3
+return ((__T38 = __x) , (void)(__T39 = __exp)) , (frexpf(__T38, __T39));
+# 301 "/usr/include/c++/12.2.1/cmath" 3
+}}
+# 319 "/usr/include/c++/12.2.1/cmath" 3
+___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt5ldexpfi(
+# 319 "/usr/include/c++/12.2.1/cmath" 3
+float __x, 
+# 319 "/usr/include/c++/12.2.1/cmath" 3
+int __exp){
+# 320 "/usr/include/c++/12.2.1/cmath" 3
+{  float __T40;
+ int __T41;
+# 320 "/usr/include/c++/12.2.1/cmath" 3
+return ((__T40 = __x) , (void)(__T41 = __exp)) , (ldexpf(__T40, __T41));
+# 320 "/usr/include/c++/12.2.1/cmath" 3
+}}
+# 388 "/usr/include/c++/12.2.1/cmath" 3
+___device__(static  __no_sc__) __inline__ __attribute__((visibility("default"))) float _ZSt3powff(
+# 388 "/usr/include/c++/12.2.1/cmath" 3
+float __x, 
+# 388 "/usr/include/c++/12.2.1/cmath" 3
+float __y){
+# 389 "/usr/include/c++/12.2.1/cmath" 3
+{  float __T42;
+ float __T43;
+# 389 "/usr/include/c++/12.2.1/cmath" 3
+return ((__T42 = __x) , (void)(__T43 = __y)) , (powf(__T42, __T43));
+# 389 "/usr/include/c++/12.2.1/cmath" 3
+}}
